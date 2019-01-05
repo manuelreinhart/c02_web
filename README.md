@@ -6,7 +6,7 @@ Campus02 Angular Project
 * Roman Zottel
 * Alexander Dzieyk
 
-##Start Project
+## Start Project
 * Open cmd Line in Project Folder
 * run npm install
 * run npm start
