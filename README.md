@@ -3,7 +3,7 @@ Campus02 Angular Project
 
 ## Team Members
 * Manuel Reinhart
-* Roman Zottel
+* Roman Zotter
 * Alexander Dzieyk
 
 ## Start Project

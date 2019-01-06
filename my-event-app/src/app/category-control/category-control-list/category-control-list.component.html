@@ -1,0 +1,25 @@
+<div class="col-md-6">
+    <button class="btn btn-success" (click)="addCategory()"> Kategorie hinzufügen</button><br>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Name</th>
+        <th>Beschreibung</th>
+        <th>Aktion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let category of categories">
+        <td class="hidden"></td>
+        <td>{{category.title}}</td>
+        <td>{{category.description}}</td>
+        <td>
+          <button class="btn btn-success" (click)="editCategory(category)"> Ändern</button>
+          <button class="btn btn-danger" (click)="deleteCategory(category)" style="margin-left: 20px;"> Löschen</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  
