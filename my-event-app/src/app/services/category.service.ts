@@ -19,8 +19,8 @@ export class CategoryService {
     return of(this.categories);
   }
 
-  deleteCategory(category: Category) {
-    //this.categories.filter(
+  deleteCategory(category: Category) {           
+    this.categories = this.categories.filter(c => c.id != category.id);
   }
 
   addCategory(category: Category) {
@@ -28,7 +28,12 @@ export class CategoryService {
   }
 
   updateCategory(category: Category) {
-    //this.categories.push(category);
+    for (var i in this.categories) {
+      if (this.categories[i].id == category.id) {        
+        this.categories[i] = category;    
+        break;
+      }
+    }
   }
 
   clear() {

@@ -11,11 +11,14 @@ import { CategoryControlEditComponent } from './category-control/category-contro
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { CategorySearchComponent } from './category-control/category-search/category-search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,    
     AppRoutingModule,
+    FormsModule,
     MatDialogModule,
     BrowserAnimationsModule
   ],
@@ -25,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     CategoryControlEditComponent,
     SidebarComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CategorySearchComponent
   ],
   entryComponents: [CategoryControlEditComponent],
   bootstrap: [AppComponent]

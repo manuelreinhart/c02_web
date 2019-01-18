@@ -36,7 +36,6 @@ export class CategoryControlListComponent implements OnInit {
     this.dialogRef = this.dialog.open(CategoryControlEditComponent, {      
       data: category
     });
-    //this.dialogRef = this.dialog.open(CategoryControlEditComponent);
   }
 
 
