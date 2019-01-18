@@ -1,7 +1,7 @@
 import { Category } from '../category';
 
 export const CATEGORIES: Category[] = [
-  { id: 11, title: 'Mr. Nice', description: '', parentCategoryId: 0 },
+  { id: 11, title: 'Mr. Nice', description: 'This a very nice blkdflasdjfldasjflasjdlöf', parentCategoryId: 0 },
   { id: 12, title: 'Narco', description: '', parentCategoryId: 0 },
   { id: 13, title: 'Bombasto', description: '', parentCategoryId: 0 },
   { id: 14, title: 'Celeritas', description: '', parentCategoryId: 0 },

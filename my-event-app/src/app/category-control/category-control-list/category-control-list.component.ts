@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from '../../category';
 import { CategoryService } from '../../services/category.service';
 import { CategoryControlEditComponent } from '../category-control-edit/category-control-edit.component';
-import { MatDialog, MatDialogConfig } from "@angular/material";
+import { MatDialog, MatDialogRef, MatDialogConfig } from "@angular/material";
+
 
 @Component({
   selector: 'app-category-control-list',
@@ -12,8 +13,9 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 export class CategoryControlListComponent implements OnInit {
   categories: Category[];
   categoryService: CategoryService;
+  dialogRef: MatDialogRef<CategoryControlEditComponent>;
 
-  constructor(private dialog: MatDialog) {
+  constructor(public dialog: MatDialog) {
     this.categoryService = new CategoryService();
   }
 
@@ -31,10 +33,10 @@ export class CategoryControlListComponent implements OnInit {
   }
 
   editCategory(category: Category): void {
-    /*this.dialog.open(CategoryControlEditComponent, {
-      category: category,
-      categoryService: this.categoryService
-    });*/
+    this.dialogRef = this.dialog.open(CategoryControlEditComponent, {      
+      data: category
+    });
+    //this.dialogRef = this.dialog.open(CategoryControlEditComponent);
   }
 
 

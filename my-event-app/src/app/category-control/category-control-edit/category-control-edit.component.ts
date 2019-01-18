@@ -10,17 +10,16 @@ import { CategoryService } from '../../services/category.service';
 })
 export class CategoryControlEditComponent {
 
-/*  constructor(
+  constructor(
     public dialogRef: MatDialogRef<CategoryControlEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public categoryService: CategoryService,
     @Inject(MAT_DIALOG_DATA) public category: Category) { }
 
   close(): void {
-
+    this.dialogRef.close(true);
   }
 
   save(): void {
-
-  }*/
+    
+  }
 
 }
