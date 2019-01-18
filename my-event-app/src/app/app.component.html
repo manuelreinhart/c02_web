@@ -1,11 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="wrapper">
+  <div class="sidebar" data-background-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-<nav>
-  <a routerlink="category-control-list">Kategorien</a>
-</nav>
-
-<router-outlet></router-outlet>
