@@ -1,8 +1,12 @@
 <div class="dialog">
 
-<h2 mat-dialog-title>{{category.title}}</h2>
-<mat-dialog-content>
-    {{category.description}}
+<h2 mat-dialog-title>{{category.title}} ändern</h2>
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+        <input matInput
+                placeholder="Kategorie"
+                formControlName="category.title">
+    </mat-form-field>
 </mat-dialog-content>
 
 <mat-dialog-actions>

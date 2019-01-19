@@ -1,4 +1,4 @@
-import { Category } from '../category';
+import { Category } from '../types/category';
 
 export const CATEGORIES: Category[] = [
   { id: 11, title: 'Mr. Nice', description: 'This a very nice blkdflasdjfldasjflasjdlöf', parentCategoryId: 0 },

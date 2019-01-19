@@ -1,4 +1,4 @@
-export class Category {
+export class Category implements Identifyable {
     id: number;
     title: string;
     description: string;
