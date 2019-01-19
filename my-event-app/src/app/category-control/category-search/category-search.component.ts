@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-category-search',
@@ -9,7 +10,10 @@ export class CategorySearchComponent implements OnInit {
 
   private name;
 
-  constructor() { }
+  constructor(public categoryService: CategoryService) { 
+
+
+  }
 
   ngOnInit() {
   }

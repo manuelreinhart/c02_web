@@ -1,12 +1,30 @@
 <div class="dialog">
-
-<h2 mat-dialog-title>{{category.title}} ändern</h2>
-<mat-dialog-content [formGroup]="form">
-    <mat-form-field>
-        <input matInput
-                placeholder="Kategorie"
-                formControlName="category.title">
-    </mat-form-field>
+<h2 mat-dialog-title>{{data.title}} ändern</h2>
+<mat-dialog-content>
+<form>
+    <div class="form-group">
+        <label>Titel:</label>
+        <input
+        [(ngModel)]="category.title"
+        name="categorytitle"
+        class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Beschreibung:</label>
+        <textarea
+        [(ngModel)]="category.description"
+        name="categorydescription"
+        class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Übergeordnete Kategorie:</label><br>
+        <select formControlName="category.parentCategoryId" [(ngModel)]="category.parentCategoryId">
+            <option *ngFor="let parentCategory of categories" [ngValue]="parentCategory.id">
+                {{ parentCategory.title }}
+            </option>
+        </select>   
+    </div>
+</form>
 </mat-dialog-content>
 
 <mat-dialog-actions>

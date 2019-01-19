@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatFormFieldModule } from "@angular/material";
+import { MatDialogModule, MatFormFieldModule, MatCardModule, MatButtonModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule  } from '@angular/forms'
 
@@ -23,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [
     MatFormFieldModule
