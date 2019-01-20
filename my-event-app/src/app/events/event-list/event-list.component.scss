@@ -1,8 +1,18 @@
-.event.listitem{
-    border-radius: 5px;
+.edit-footer {
+    background-color: rgba(0, 0, 255, 0.589);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+    margin-left: -15px;
+    transition: height 1s;
+    &.open {
+        height:60px;
+    }
+}
+
+.btn {
+    color: blue;
+    margin: 10px 10px;
     background-color: white;
-    margin: 5px;
-    padding: 20px;
-    width: 300px;
-    float: left;
 }

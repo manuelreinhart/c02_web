@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Event } from '../../types/event';
 import { EventService } from '../../services/event.service';
 import { EventSearchboxComponent } from '../event-searchbox/event-searchbox.component';
-import { AlertPromise } from 'selenium-webdriver';
+import { CategoryService } from '../../services/category.service';
+import { Category } from '../../types/category'
 
 
 @Component({
@@ -17,12 +18,15 @@ export class EventSearchComponent implements OnInit {
   private events: Array<Event>;
   private filteredEvents: Array<Event>;
 
-  constructor(private eventService: EventService) {
+  private categories: Array<Category>;
+
+  constructor(private eventService: EventService, private categoryService: CategoryService) {
     eventService.getItems().subscribe(events => this.events = events);
+    categoryService.getItems().subscribe(categories => this.categories = categories);
   }
 
   ngOnInit() {
-    //this.filteredEvents = this.events;
+    this.filteredEvents = this.events; //todo remove
    
   }
 

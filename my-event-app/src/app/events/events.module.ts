@@ -5,10 +5,11 @@ import { EventSearchComponent } from './event-search/event-search.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import { EventSearchboxComponent } from './event-searchbox/event-searchbox.component';
-import { EventService } from '../services/event.service'
+import { EventService } from '../services/event.service';
+import { EventCardComponent } from './event-card/event-card.component'
 
 @NgModule({
-  declarations: [EventSearchComponent, EventListComponent, EventEditComponent, EventSearchboxComponent],
+  declarations: [EventSearchComponent, EventListComponent, EventEditComponent, EventSearchboxComponent, EventCardComponent],
   exports: [EventSearchComponent, EventListComponent, EventEditComponent, EventSearchboxComponent],
   imports: [
     CommonModule,

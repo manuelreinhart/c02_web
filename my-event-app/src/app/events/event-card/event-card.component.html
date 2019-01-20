@@ -1,0 +1,8 @@
+<div class="card" [ngClass]="{'selected': selected, 'edit' : editMode}" (mousedown)="mousedown()" (mouseup)="mouseup()" (mouseleave)="mouseup()">
+    <div>{{event.title}}</div>
+    <div>{{event.description}}</div>
+    
+    <div *ngIf="!editMode" class="editbutton" (click)="editEvent()"><i class="ti-pencil"></i></div>
+</div>
+
+

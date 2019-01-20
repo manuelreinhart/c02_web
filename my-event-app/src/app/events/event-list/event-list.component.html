@@ -1,6 +1,12 @@
+<div>
+
 <h3>Gefundene Veranstaltungen</h3>
 
-<div class="event listitem" *ngFor="let event of events">
-  <div>{{event.title}}</div>
-  <div>{{event.description}}</div>
+<event-card  [editMode]="editMode" (onLongPress)="activateEditMode()" *ngFor="let event of events" [event]="event" #searchcard></event-card>
+</div>
+
+
+<div [ngClass]="{'open': editMode}" class="edit-footer">
+  <button class="btn" (click)="deleteSelected()">Ausgewählte Events löschen</button>
+  <button class="btn" (click)="editMode = false">Schließen</button>
 </div>

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, QueryList } from '@angular/core';
 import { Event } from '../../types/event';
+import { EventCardComponent } from '../event-card/event-card.component';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'event-list',
@@ -10,9 +12,25 @@ export class EventListComponent implements OnInit {
 
   @Input() events: Event;
 
-  constructor() { }
+  @ViewChildren('searchcard') searchcards: QueryList<EventCardComponent>;
+
+  private editMode: boolean;
+
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
+
+  }
+
+  activateEditMode() {
+    this.editMode = true;
+  }
+
+  deleteSelected() {
+    this.searchcards.forEach(c => {
+      if (c.selected)
+        this.eventService.deleteItem(c.event);
+    });
   }
 
 }

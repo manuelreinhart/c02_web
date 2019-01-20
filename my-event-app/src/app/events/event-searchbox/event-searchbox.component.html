@@ -12,12 +12,8 @@
         <div class="form-group">
             <label>Kategorie:</label>
             <select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" class="form-control" id="category">
-              <option selected>Bitte auswählen</option>
-              <option value="16">Rock</option>
-              <option value="1">Techno</option>
-              <option value="1">Klassik</option>
-              <option value="1">Schlager</option>
-              <option value="1">Pop</option>
+              <option *ngFor="let cat of categories" [value]="cat.id">{{cat.title}}</option>
+
             </select>
         </div>
         <!-- <div class="form-group">
@@ -27,7 +23,7 @@
             <input type="date" [(ngModel)]="to" name="to" class="form-control">
         </div> -->
         <div class="form-group">
-          <button [disabled]="!name"  (click)="search()"  class="btn btn-default">Suchen</button>
+          <button (click)="search()"  class="btn btn-default">Suchen</button>
         </div>
       </form>
     </div>
