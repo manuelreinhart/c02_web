@@ -11,15 +11,17 @@ import { CategoryService } from '../../services/category.service';
 })
 export class CategoryControlEditComponent {
 
-  private data: Category;
+  private oldCategory: Category;
   private category: Category;
   private categories: Category[];
 
   constructor(
     public dialogRef: MatDialogRef<CategoryControlEditComponent>,
     public categoryService: CategoryService,
-    @Inject(MAT_DIALOG_DATA) data: Category) { 
-      this.category = { ...data };
+    @Inject(MAT_DIALOG_DATA) data: any) {
+      this.oldCategory = data.category;
+      this.category = { ...data.category };
+      this.categories = data.categories;
 
       this.categoryService.getItems()
         .subscribe(categories => this.categories = categories);
@@ -30,7 +32,13 @@ export class CategoryControlEditComponent {
     }
 
     save(): void {
-      this.categoryService.updateItem(this.category);
+      if(this.oldCategory == null) {
+        this.categoryService.addItem(this.category);
+      }
+      else {
+        this.categoryService.updateItem(this.category);
+      }
+
       this.dialogRef.close(true);
     }
 }

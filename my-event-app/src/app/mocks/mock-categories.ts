@@ -1,14 +1,16 @@
 import { Category } from '../types/category';
 
 export const CATEGORIES: Category[] = [
-  { id: 11, title: 'Mr. Nice', description: 'This a very nice blkdflasdjfldasjflasjdlöf', parentCategoryId: 0 },
-  { id: 12, title: 'Narco', description: '', parentCategoryId: 0 },
-  { id: 13, title: 'Bombasto', description: '', parentCategoryId: 0 },
-  { id: 14, title: 'Celeritas', description: '', parentCategoryId: 0 },
-  { id: 15, title: 'Magneta', description: '', parentCategoryId: 0 },
-  { id: 16, title: 'RubberMan', description: '', parentCategoryId: 0 },
-  { id: 17, title: 'Dynama', description: '', parentCategoryId: 0 },
-  { id: 18, title: 'Dr IQ', description: '', parentCategoryId: 0 },
-  { id: 19, title: 'Magma', description: '', parentCategoryId: 0 },
-  { id: 20, title: 'Tornado', description: '', parentCategoryId: 0 }
+  { id: 1, title: 'Metal', description: '', parentCategoryId: -1 },
+  { id: 2, title: 'Rock', description: '', parentCategoryId: -1 },
+  { id: 3, title: 'Wizard Rock', description: '', parentCategoryId: 2 },
+  { id: 12, title: 'Chiptune', description: '', parentCategoryId: -1 },
+  { id: 4, title: 'Death Metal', description: '', parentCategoryId: 1 },
+  { id: 5, title: 'Grindcore', description: '', parentCategoryId: 1 },
+  { id: 6, title: 'Punk', description: '', parentCategoryId: -1 },
+  { id: 7, title: 'Post-Hardcore', description: '', parentCategoryId: 6 },
+  { id: 8, title: 'Techno', description: '', parentCategoryId: -1 },
+  { id: 9, title: 'Hardstyle', description: '', parentCategoryId: 8 },
+  { id: 10, title: 'Frenchcore', description: '', parentCategoryId: 8 },
+  { id: 11, title: 'Hardcore Techno', description: '', parentCategoryId: 8 }
 ];

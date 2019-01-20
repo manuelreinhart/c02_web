@@ -1,5 +1,6 @@
 <div class="dialog">
-<h2 mat-dialog-title>{{data.title}} ändern</h2>
+<h2 mat-dialog-title *ngIf="oldCategory != null">{{oldCategory.title}} ändern</h2>
+<h2 mat-dialog-title *ngIf="oldCategory == null">Kategorie hinzufügen</h2>
 <mat-dialog-content>
 <form>
     <div class="form-group">
@@ -18,7 +19,8 @@
     </div>
     <div class="form-group">
         <label>Übergeordnete Kategorie:</label><br>
-        <select formControlName="category.parentCategoryId" [(ngModel)]="category.parentCategoryId">
+        <select name="categorypparentCategoryId" [(ngModel)]="category.parentCategoryId">
+            <option value="0"></option>
             <option *ngFor="let parentCategory of categories" [ngValue]="parentCategory.id">
                 {{ parentCategory.title }}
             </option>

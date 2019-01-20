@@ -21,7 +21,10 @@ export class CategoryControlListComponent implements OnInit {
 
   ngOnInit() {
     this.categoryService.getItems()
-      .subscribe(categories => this.categories = categories);
+      .subscribe(categories => { 
+        this.categories = categories;
+        this.refreshList(categories);
+      });
   }
 
   refreshList(categories: Array<Category>) {
@@ -29,7 +32,12 @@ export class CategoryControlListComponent implements OnInit {
   }
 
   addCategory(): void {
-
+    this.dialogRef = this.dialog.open(CategoryControlEditComponent, {      
+      data: {
+        category: null,
+        categories: this.categories
+      }
+    });
   }
 
   deleteCategory(category: Category): void {
@@ -38,7 +46,10 @@ export class CategoryControlListComponent implements OnInit {
 
   editCategory(category: Category): void {
     this.dialogRef = this.dialog.open(CategoryControlEditComponent, {      
-      data: category
+      data: {
+        category: category,
+        categories: this.categories
+      }
     });
   }
 

@@ -9,7 +9,7 @@ import { Category } from '../../types/category';
 })
 export class CategorySearchComponent implements OnInit {
 
-  private name;
+  private name = '';
 
   @Input() categories: Array<Category>;
   @Output() onSearchDone = new EventEmitter<Array<Category>>();

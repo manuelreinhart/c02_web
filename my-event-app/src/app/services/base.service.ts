@@ -4,12 +4,20 @@ import { Observable, of } from 'rxjs';
 export class BaseService<T extends Identifyable> {
 
   private data: T[];
+  private maxId: number;
 
-  constructor() { 
+  constructor() {
+    this.maxId = 0;
   }
 
   initData(items : T[]) {
     this.data = items;
+
+    for(var i in this.data) {
+      if(this.data[i].id > this.maxId) {
+        this.maxId = this.data[i].id;
+      }
+    }
   }
 
   getItems(): Observable<T[]> {
@@ -24,6 +32,7 @@ export class BaseService<T extends Identifyable> {
   }
 
   addItem(item: T) {
+    item.id = ++this.maxId;
     this.data.push(item);
   }
 
