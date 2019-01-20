@@ -1,5 +1,5 @@
 
-<app-category-search></app-category-search>
+<app-category-search [categories]="categories" (onSearchDone)="refreshList($event)"></app-category-search>
 <div class="col-md-6">
     <button class="btn btn-success" (click)="addCategory()"> Kategorie hinzufügen</button><br>
     <table class="table table-striped">
@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let category of categories">
+      <tr *ngFor="let category of filteredCategories">
         <td class="hidden"></td>
         <td>{{category.title}}</td>
         <td>{{category.description}}</td>

@@ -12,6 +12,8 @@ import { MatDialog, MatDialogRef, MatDialogConfig } from "@angular/material";
 })
 export class CategoryControlListComponent implements OnInit {
   categories: Category[];
+  filteredCategories: Array<Category>;
+
   dialogRef: MatDialogRef<CategoryControlEditComponent>;
 
   constructor(public categoryService: CategoryService, public dialog: MatDialog) {
@@ -20,6 +22,10 @@ export class CategoryControlListComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getItems()
       .subscribe(categories => this.categories = categories);
+  }
+
+  refreshList(categories: Array<Category>) {
+    this.filteredCategories = categories;
   }
 
   addCategory(): void {
