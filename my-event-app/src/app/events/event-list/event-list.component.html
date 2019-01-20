@@ -1,6 +1,7 @@
 <div>
 
 <h3>Gefundene Veranstaltungen</h3>
+<div>gedrückt halten zum editieren</div>
 
 <event-card  [editMode]="editMode" (onLongPress)="activateEditMode()" *ngFor="let event of events" [event]="event" #searchcard></event-card>
 </div>

@@ -6,8 +6,10 @@
     height: 0px;
     margin-left: -15px;
     transition: height 1s;
+    opacity: 1;
     &.open {
         height:60px;
+        opacity: 1;
     }
 }
 
