@@ -12,6 +12,7 @@
         <div class="form-group">
             <label>Kategorie:</label>
             <select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" class="form-control" id="category">
+              <option value="0">Alle Kategorien</option>
               <option *ngFor="let cat of categories" [value]="cat.id">{{cat.title}}</option>
 
             </select>
