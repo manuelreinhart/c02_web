@@ -35,9 +35,10 @@ export class BaseService<T extends Identifyable> {
     return true;
   }
 
-  addItem(item: T) {
+  addItem(item: T): T {
     item.id = ++this.maxId;
     this.data.push(item);
+    return item;
   }
 
   updateItem(item: T) {

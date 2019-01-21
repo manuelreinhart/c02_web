@@ -11,6 +11,7 @@ import { CategoryService } from '../../services/category.service';
 })
 export class CategoryControlEditComponent {
 
+  private saveError: boolean;
   private oldCategory: Category;
   private category: Category;
   private categories: Category[];
@@ -33,7 +34,7 @@ export class CategoryControlEditComponent {
 
     save(): void {
       if(!this.categoryService.canSaveItem(this.category)) {
-        alert("Kategorie kann nicht gespeichert werden. Es existiert bereits eine Kategorie mit diesem Namen!");
+        this.saveError = true;
         return;
       }
 
