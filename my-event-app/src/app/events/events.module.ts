@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EventSearchComponent } from './event-search/event-search.component';
 import { EventListComponent } from './event-list/event-list.component';
-import { EventEditComponent } from './event-edit/event-edit.component';
 import { EventSearchboxComponent } from './event-searchbox/event-searchbox.component';
 import { EventService } from '../services/event.service';
 import { EventCardComponent } from './event-card/event-card.component'
 
 @NgModule({
-  declarations: [EventSearchComponent, EventListComponent, EventEditComponent, EventSearchboxComponent, EventCardComponent],
-  exports: [EventSearchComponent, EventListComponent, EventEditComponent, EventSearchboxComponent],
+  declarations: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventCardComponent],
+  exports: [EventSearchComponent, EventListComponent, EventSearchboxComponent],
   imports: [
     CommonModule,
     FormsModule
