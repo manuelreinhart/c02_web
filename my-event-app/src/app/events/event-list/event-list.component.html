@@ -5,7 +5,7 @@
 
 <event-card  [editMode]="editMode" (onLongPress)="activateEditMode()" *ngFor="let event of events" [event]="event" #searchcard></event-card>
 
-<div *ngIf="editMode" class="add card" (click)="addEvent()">+</div>
+<div *ngIf="editMode || events.length == 0" class="add card" (click)="addEvent()">+</div>
 
 
 </div>
