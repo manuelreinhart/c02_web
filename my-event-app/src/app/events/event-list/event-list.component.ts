@@ -50,11 +50,13 @@ export class EventListComponent implements OnInit {
 
   }
   saveNewEvent() {
-    this.eventService.addItem(this.newEvent);  
+    this.newEvent = this.eventService.addItem(this.newEvent);  
     setTimeout(() => {
-      let newCard = this.searchcards.last;   
+      let newCard = this.searchcards.find(c => c.event.id == this.newEvent.id);   
       newCard.editEvent();
     }, 100);
+    
+
     
   }
 

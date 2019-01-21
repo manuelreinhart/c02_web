@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { CategoryControlListComponent } from './category-control/category-control-list/category-control-list.component';
 import { CategoryControlEditComponent } from './category-control/category-control-edit/category-control-edit.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { CategorySearchComponent } from './category-control/category-search/category-search.component';
 
@@ -38,7 +37,6 @@ import { CategorySearchComponent } from './category-control/category-search/cate
     CategoryControlListComponent,
     CategoryControlEditComponent,
     SidebarComponent,
-    NavbarComponent,
     HomeComponent,
     CategorySearchComponent,
   ],

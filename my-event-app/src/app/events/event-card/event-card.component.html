@@ -7,6 +7,7 @@
     <input *ngIf="isEdit" [(ngModel)]="event.description" required minlength="3" name="description">
 
     <div class="text" *ngIf="!isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
+    <div class="text" *ngIf="isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
     
     <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editEvent()"><i class="ti-pencil"></i></div>
     <div *ngIf="isEdit" class="editbutton" (click)="saveEvent()"><i class="ti-save"></i></div>
