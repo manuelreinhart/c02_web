@@ -5,10 +5,7 @@ export class Event implements Identifyable {
     title: string;
     description: string;
     startDate: Date;
-    //startTime: Time;
     endDate: Date;
-    //endTime: Time;
-    //schedule: string;
     categoryId: number;
     organizerId: number;
     locationId: number;

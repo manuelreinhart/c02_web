@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '../../types/event';
 import { CategoryService } from '../../services/category.service';
+import { Category } from '../../types/category';
 
 @Component({
   selector: 'event-card',
@@ -16,7 +17,11 @@ export class EventCardComponent implements OnInit {
   timeoutHandler: any;
   public selected: boolean;
   public isEdit: boolean; 
-  public category: string;
+  public categories: Array<Category>
+
+  get category(): string {
+    return  this.categoryService.getItem(this.event.categoryId).title;
+  }
 
   constructor(private categoryService: CategoryService) {  
   }
@@ -31,8 +36,8 @@ export class EventCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.category = this.categoryService.getItems().
-
+    this.categoryService.getItem(this.event.categoryId).title;
+    this.categoryService.getItems().subscribe(items => this.categories = items);
   }
 
   public mouseup() {
