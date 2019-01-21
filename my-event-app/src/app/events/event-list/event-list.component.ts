@@ -32,7 +32,7 @@ export class EventListComponent implements OnInit {
     this.searchcards.forEach(c => {
       if (c.selected)
         this.eventService.deleteItem(c.event);
-    });
+    });    
     this.editMode = false;
   }
 
