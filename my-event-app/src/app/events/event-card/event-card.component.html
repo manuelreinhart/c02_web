@@ -1,16 +1,24 @@
 <div class="card" [ngClass]="{'selected': selected, 'edit' : editMode}" (mousedown)="mousedown()" (mouseup)="mouseup()" (mouseleave)="mouseup()">
 
+    <form #f="ngForm">
     <div class="text" *ngIf="!isEdit">{{event.title}}</div>
-    <input *ngIf="isEdit" [(ngModel)]="event.title" required minlength="3" name="event">
+    <input *ngIf="isEdit" [(ngModel)]="event.title" required minlength="3" name="event" [ngClass]="{invalid: !f?.controls['event']?.valid}">
 
     <div class="text" *ngIf="!isEdit">{{event.description}}</div>
-    <input *ngIf="isEdit" [(ngModel)]="event.description" required minlength="3" name="description">
+    <input *ngIf="isEdit" [(ngModel)]="event.description" required minlength="3" name="description" [ngClass]="{invalid: !f?.controls['description']?.valid}" >
 
     <div class="text" *ngIf="!isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
     <div class="text" *ngIf="isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
+
+    <div class="text" *ngIf="!isEdit">{{category}}</div>
+    <select *ngIf="isEdit" name="category" [(ngModel)]="event.categoryId" class="form-control">
+        <option *ngFor="let cat of categories" [ngValue]="cat.id">{{cat.title}}</option>
+    </select>   
     
     <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editEvent()"><i class="ti-pencil"></i></div>
-    <div *ngIf="isEdit" class="editbutton" (click)="saveEvent()"><i class="ti-save"></i></div>
+    <div *ngIf="isEdit" class="editbutton" [ngClass]="{disabled: !f?.valid}" (click)="saveEvent()"><i class="ti-save"></i></div>
+
+    </form>
 </div>
 
 

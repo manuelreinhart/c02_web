@@ -5,7 +5,8 @@
     padding: 20px;
     width: 300px;
     float: left;
-    min-height: 150px;
+    height: 180px;
+
 
     &.edit {
         animation: wackeln 1s linear infinite;
@@ -18,10 +19,15 @@
 
 .text {
     margin-top: 10px;
+    overflow: hidden;
 }
 
 input {
     margin-top: 5px;
+    &.invalid {
+        border: 1px solid red;
+        box-shadow: 0 0 10px red;
+    }
 }
 
 .editbutton {
@@ -34,6 +40,10 @@ input {
     &:hover {
         cursor: pointer;
         transform: scale(1.2);
+    }
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
     }
 }
 
