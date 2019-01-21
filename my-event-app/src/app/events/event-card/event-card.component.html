@@ -17,7 +17,7 @@
     
     <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editEvent()"><i class="ti-pencil"></i></div>
     <div *ngIf="isEdit" class="editbutton" [ngClass]="{disabled: !f?.valid}" (click)="saveEvent()"><i class="ti-save"></i></div>
-
+ 
     </form>
 </div>
 

@@ -45,9 +45,15 @@
 }
 
 .btn {
-    color: #0092FF;
+    color: black;
     margin: 10px 10px;
     background-color: white;
+    &:hover {       
+    }
+    &:active {
+        background-color: #0092FF;
+        color: white;
+    }
 }
 
 @keyframes wackeln {
