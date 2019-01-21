@@ -4,11 +4,19 @@
 }
 
 input, textarea, select  {
-    border: 1px solid gray !important;
-}
+    margin-top: 5px;
+    border: 1px solid gray;
 
-input:active, input:hover, textarea:active, textarea:hover, select:active, select:hover  {
-    border: 1px solid lightgray !important;
+    &:active {
+        border: 1px solid lightgray;
+    }
+    &:hover {
+        border: 1px solid lightgray;
+    }
+    &.invalid {
+        border: 1px solid red;
+        box-shadow: 0 0 10px red;
+    }
 }
 
 .spacer {flex: 1 1 auto;}

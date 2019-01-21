@@ -1,16 +1,16 @@
 import { Category } from '../types/category';
 
 export const CATEGORIES: Category[] = [
-  { id: 1, title: 'Metal', description: '', parentCategoryId: -1 },
-  { id: 2, title: 'Rock', description: '', parentCategoryId: -1 },
-  { id: 3, title: 'Wizard Rock', description: '', parentCategoryId: 2 },
-  { id: 12, title: 'Chiptune', description: '', parentCategoryId: -1 },
-  { id: 4, title: 'Death Metal', description: '', parentCategoryId: 1 },
-  { id: 5, title: 'Grindcore', description: '', parentCategoryId: 1 },
-  { id: 6, title: 'Punk', description: '', parentCategoryId: -1 },
-  { id: 7, title: 'Post-Hardcore', description: '', parentCategoryId: 6 },
-  { id: 8, title: 'Techno', description: '', parentCategoryId: -1 },
-  { id: 9, title: 'Hardstyle', description: '', parentCategoryId: 8 },
-  { id: 10, title: 'Frenchcore', description: '', parentCategoryId: 8 },
-  { id: 11, title: 'Hardcore Techno', description: '', parentCategoryId: 8 }
+  { id: 1, title: 'Metal', description: 'Metal ist eine Musikrichtung und Subkultur. Die Bezeichnung ist die Kurzform des Begriffs Heavy Metal, der heute nur noch die ursprüngliche Form dieser Musik bezeichnet', parentCategoryId: -1 },
+  { id: 2, title: 'Rock', description: 'Rockmusik, kurz auch Rock, dient als Oberbegriff für Musikrichtungen, die sich seit Ende der 1960er Jahre aus der Vermischung des Rock ’n’ Roll der späten 1950er und frühen 1960er Jahre und anderen Musikstilen wie z. B. Beatmusik und Blues entwickelt haben', parentCategoryId: -1 },
+  { id: 3, title: 'Wizard Rock', description: 'Wizard Rock, auch kurz Wrock, ist ein themenbezogenes Untergenre der Rockmusik, das seinen Ursprung in der Welt der Harry-Potter-Romane von J.K. Rowling hat. Entstanden ist es ab dem Jahr 2002 in den Vereinigten Staaten. Genrebegründer und bekanntester Vertreter ist die US-amerikanische Band Harry and the Potters', parentCategoryId: 2 },
+  { id: 12, title: 'Chiptune', description: 'Chiptunes bilden ein Genre innerhalb der computererstellten Musik, das sich durch einen charakteristischen künstlichen Klang auszeichnet. Der Ursprung liegt in der Heimcomputer- und Telespiele-Ära. Die ursprünglichen Chiptunes wurden durch Soundchips mit relativ primitiven Tongeneratoren erzeugt', parentCategoryId: -1 },
+  { id: 4, title: 'Death Metal', description: 'Death Metal ist ein Subgenre des Metal und gehört neben Black Metal und Thrash Metal zum Spektrum des Extreme Metal. Kennzeichnend sind martialische Melodien, die auf sehr tief gestimmten E-Gitarren und E-Bässen gespielt werden', parentCategoryId: 1 },
+  { id: 5, title: 'Grindcore', description: 'Grindcore ist ein Musikstil, der seine Wurzeln im Hardcore Punk und im Crustcore der frühen 1980er Jahre hat. Er entstand nahezu gleichzeitig in Großbritannien und in den USA', parentCategoryId: 1 },
+  { id: 6, title: 'Punk', description: 'Punk ist eine Stilrichtung der Rockmusik, die Mitte der 1970er Jahre in New York und London zusammen mit der Subkultur des Punk entstanden ist. Nachdem sich der Punk-Rock etabliert hatte, entstanden verschiedene Stilrichtungen mit eigenen Subkulturen', parentCategoryId: -1 },
+  { id: 7, title: 'Post-Hardcore', description: 'Post-Hardcore oder Postcore bezeichnet eine Entwicklung aus der amerikanischen Hardcore-Punk-Szene, die die Werte des Hardcores zwar weiter vertritt, sich musikalisch jedoch in andere Richtungen entwickelt hat', parentCategoryId: 6 },
+  { id: 8, title: 'Techno', description: 'Techno ist eine Musikrichtung, die in der zweiten Hälfte der 1980er-Jahre durch die Verschmelzung mehrerer Stilarten der elektronischen Tanzmusik entstanden ist. Als Basis dient insbesondere der minimalistische, bassdrum-betonte Grundrhythmus der House-Musik', parentCategoryId: -1 },
+  { id: 9, title: 'Hardstyle', description: 'Hardstyle ist ein Subgenre der elektronischen Musik, das aus einer Kombination von Hard Trance mit Hardcore-Techno-Elementen entstanden ist', parentCategoryId: 8 },
+  { id: 10, title: 'Frenchcore', description: 'Frenchcore ist ein Musikgenre, welches vom Hardcore-Techno abstammt. Es kam während Ende der 1990er und Anfang der 2000er hervor. Größere Bekanntheit hat Frenchcore vor allem in Frankreich, den Niederlanden und Italien erlangt', parentCategoryId: 8 },
+  { id: 11, title: 'Hardcore Techno', description: 'Hardcore Techno, in der entsprechenden Szene meist nur Hardcore genannt, ist ein härterer Techno-Musikstil und bewegt sich in einem Tempospektrum ab ungefähr 160 BPM', parentCategoryId: 8 }
 ];
