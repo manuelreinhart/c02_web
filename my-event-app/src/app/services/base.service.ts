@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 
 export class BaseService<T extends Identifyable> {
 
-  private data: T[];
+  protected data: T[];
   private maxId: number;
 
   constructor() {
@@ -13,7 +13,7 @@ export class BaseService<T extends Identifyable> {
   initData(items : T[]) {
     this.data = items;
 
-    for(var i in this.data) {
+    for (var i=0; i<this.data.length; i++) {
       if(this.data[i].id > this.maxId) {
         this.maxId = this.data[i].id;
       }
@@ -31,15 +31,19 @@ export class BaseService<T extends Identifyable> {
     }
   }
 
+  canSaveItem(item: T): boolean {
+    return true;
+  }
+
   addItem(item: T) {
     item.id = ++this.maxId;
     this.data.push(item);
   }
 
   updateItem(item: T) {
-    for (var i in this.data) {
-      if (this.data[i].id == item.id) {        
-        this.data[i] = item;    
+    for (var i=0; i<this.data.length; i++) {
+      if (this.data[i].id == item.id) {
+        this.data[i] = item;
         break;
       }
     }

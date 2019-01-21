@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Category } from '../../types/category';
 import { CategoryService } from '../../services/category.service';
@@ -32,6 +32,11 @@ export class CategoryControlEditComponent {
     }
 
     save(): void {
+      if(!this.categoryService.canSaveItem(this.category)) {
+        alert("Kategorie kann nicht gespeichert werden. Es existiert bereits eine Kategorie mit diesem Namen!");
+        return;
+      }
+
       if(this.oldCategory == null) {
         this.categoryService.addItem(this.category);
       }

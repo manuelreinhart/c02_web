@@ -12,4 +12,12 @@ export class Event implements Identifyable {
     categoryId: number;
     organizerId: number;
     locationId: number;
+
+    constructor() {
+      this.title = "";
+      this.description = "";
+      this.categoryId = -1;
+      this.organizerId = -1;
+      this.locationId = -1;
+    }
   }
