@@ -14,6 +14,7 @@ export class EventCardComponent implements OnInit {
 
   timeoutHandler: any;
   public selected: boolean;
+  public isEdit: boolean;
 
   constructor() { }
 
@@ -44,7 +45,10 @@ export class EventCardComponent implements OnInit {
   }
 
   public editEvent() {
-    
+    this.isEdit = true;
+  }
+  public saveEvent() {
+    this.isEdit = false;
   }
 
 

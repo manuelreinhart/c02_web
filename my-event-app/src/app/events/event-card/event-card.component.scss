@@ -5,6 +5,7 @@
     padding: 20px;
     width: 300px;
     float: left;
+    min-height: 150px;
 
     &.edit {
         animation: wackeln 1s linear infinite;
@@ -13,6 +14,14 @@
     &.selected {
         background-color: rgba(0, 47, 255, 0.438);        
     }
+}
+
+.text {
+    margin-top: 10px;
+}
+
+input {
+    margin-top: 5px;
 }
 
 .editbutton {

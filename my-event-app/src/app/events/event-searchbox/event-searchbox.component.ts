@@ -16,7 +16,7 @@ export class EventSearchboxComponent implements OnInit {
 
 
   private name: string;
-  private category: number;
+  private category = 0;
   private from: Date;
   private to: Date;
 
@@ -35,9 +35,15 @@ export class EventSearchboxComponent implements OnInit {
   }
 
   filter(): Array<Event> {
-    let res = new Array<Event>();
-    res = this.events.filter(e => e.title.toLowerCase().includes(this.name.toLowerCase()));
-    if (this.category)
+    let res = this.events;
+    if (this.name) {
+        res = res.filter(e => 
+        e.title.toLowerCase().includes(this.name.toLowerCase()) ||
+        e.description.toLowerCase().includes(this.name.toLowerCase())
+      );
+    }
+
+    if (this.category && this.category > 0)
       res = res.filter(e => e.categoryId == this.category);
 
     return res;
