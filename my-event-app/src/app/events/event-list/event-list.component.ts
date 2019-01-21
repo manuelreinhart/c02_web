@@ -2,6 +2,8 @@ import { Component, OnInit, Input, ViewChildren, QueryList } from '@angular/core
 import { Event } from '../../types/event';
 import { EventCardComponent } from '../event-card/event-card.component';
 import { EventService } from '../../services/event.service';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { EventDetailComponent } from '../event-detail/event-detail.component';
 
 @Component({
   selector: 'event-list',
@@ -18,10 +20,21 @@ export class EventListComponent implements OnInit {
 
   private newEvent: Event;
 
-  constructor(private eventService: EventService) { }
+  private detailDialog: MatDialogRef<EventDetailComponent>;
+
+  constructor(private eventService: EventService, private dialog: MatDialog) { }
 
   ngOnInit() {
+    
+  }
 
+  showDetail(event) {
+    console.log(event);
+    this.detailDialog = this.dialog.open(EventDetailComponent, { 
+      data: {
+        event: event
+      }
+    });
   }
 
   activateEditMode() {
@@ -54,10 +67,7 @@ export class EventListComponent implements OnInit {
     setTimeout(() => {
       let newCard = this.searchcards.find(c => c.event.id == this.newEvent.id);   
       newCard.editEvent();
-    }, 100);
-    
-
-    
+    }, 100); 
   }
 
 }

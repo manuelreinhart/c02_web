@@ -15,7 +15,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { CategorySearchComponent } from './category-control/category-search/category-search.component';
 
-
 @NgModule({
   imports: [
     BrowserModule,        
@@ -38,7 +37,7 @@ import { CategorySearchComponent } from './category-control/category-search/cate
     CategoryControlEditComponent,
     SidebarComponent,
     HomeComponent,
-    CategorySearchComponent,
+    CategorySearchComponent
   ],
   entryComponents: [CategoryControlEditComponent],
   bootstrap: [AppComponent]
