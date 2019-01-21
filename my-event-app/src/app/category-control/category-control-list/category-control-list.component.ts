@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Category } from '../../types/category';
 import { CategoryService } from '../../services/category.service';
 import { CategoryControlEditComponent } from '../category-control-edit/category-control-edit.component';
 import { MatDialog, MatDialogRef, MatDialogConfig } from "@angular/material";
+import { CategorySearchComponent } from '../category-search/category-search.component';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class CategoryControlListComponent implements OnInit {
   filteredCategories: Array<Category>;
 
   dialogRef: MatDialogRef<CategoryControlEditComponent>;
+
+  @ViewChild('categorySearch') categorySearch: CategorySearchComponent;
 
   constructor(public categoryService: CategoryService, public dialog: MatDialog) {
   }
@@ -31,6 +34,10 @@ export class CategoryControlListComponent implements OnInit {
     this.filteredCategories = categories;
   }
 
+  triggerRefresh() {
+    this.categorySearch.search();
+  }
+
   addCategory(): void {
     this.dialogRef = this.dialog.open(CategoryControlEditComponent, {      
       data: {
@@ -38,10 +45,15 @@ export class CategoryControlListComponent implements OnInit {
         categories: this.categories
       }
     });
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      this.triggerRefresh();
+    });
   }
 
   deleteCategory(category: Category): void {
     this.categoryService.deleteItem(category);
+    this.triggerRefresh();
   }
 
   editCategory(category: Category): void {
@@ -50,6 +62,10 @@ export class CategoryControlListComponent implements OnInit {
         category: category,
         categories: this.categories
       }
+    });
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      this.triggerRefresh();
     });
   }
 
