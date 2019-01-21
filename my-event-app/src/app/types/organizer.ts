@@ -10,4 +10,13 @@ export class Organizer implements Identifyable {
     password: string;
     status: number;
     role: number;
+
+    constructor() {
+      this.name = "";
+      this.address = "";
+      this.email = "";
+      this.homepage = "";
+      this.username = "";
+      this.password = "";
+    }
   }
