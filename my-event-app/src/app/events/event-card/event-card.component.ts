@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '../../types/event';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'event-card',
@@ -14,17 +15,24 @@ export class EventCardComponent implements OnInit {
 
   timeoutHandler: any;
   public selected: boolean;
-  public isEdit: boolean;
+  public isEdit: boolean; 
+  public category: string;
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) {  
+  }
 
   ngOnChanges() {
     if (this.editMode == false) {
-      this.selected = false;
+      this.selected = false;      
+    }
+    if (this.editMode == true){
+      this.isEdit = false;
     }
   }
 
   ngOnInit() {
+    //this.category = this.categoryService.getItems().
+
   }
 
   public mouseup() {
@@ -38,13 +46,14 @@ export class EventCardComponent implements OnInit {
     if (this.editMode)
       this.selected = !this.selected;
     this.timeoutHandler = setTimeout(() => {
-      this.selected = true;
+      this.selected = true;      
       this.onLongPress.emit();
       this.timeoutHandler = null;
     }, 500);
   }
 
   public editEvent() {
+    console.log("edit");
     this.isEdit = true;
   }
   public saveEvent() {

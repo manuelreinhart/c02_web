@@ -10,11 +10,13 @@ import { EventService } from '../../services/event.service';
 })
 export class EventListComponent implements OnInit {
 
-  @Input() events: Event;
+  @Input() events: Array<Event>;
 
   @ViewChildren('searchcard') searchcards: QueryList<EventCardComponent>;
 
   private editMode: boolean;
+
+  private newEvent: Event;
 
   constructor(private eventService: EventService) { }
 
@@ -31,6 +33,31 @@ export class EventListComponent implements OnInit {
       if (c.selected)
         this.eventService.deleteItem(c.event);
     });
+    this.editMode = false;
+  }
+
+  addEvent() {
+    this.newEvent = new Event();   
+    this.newEvent.title = "New Event";
+    this.newEvent.description = "Fill in description here";
+    this.newEvent.categoryId = 1;
+    this.newEvent.locationId = 1;
+    this.newEvent.organizerId = 1;
+    this.newEvent.startDate = new Date();
+    this.newEvent.endDate = new Date();
+    this.editMode = false;    
+    this.saveNewEvent();
+
+  }
+  saveNewEvent() {
+    this.newEvent = this.eventService.addItem(this.newEvent);  
+    setTimeout(() => {
+      let newCard = this.searchcards.find(c => c.event.id == this.newEvent.id);   
+      newCard.editEvent();
+    }, 100);
+    
+
+    
   }
 
 }
