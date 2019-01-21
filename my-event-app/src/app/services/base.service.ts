@@ -50,6 +50,16 @@ export class BaseService<T extends Identifyable> {
     }
   }
 
+  getItem(id: number): T {
+    for (var i=0; i<this.data.length; i++) {
+      if (this.data[i].id == id) {
+        return this.data[i];
+      }
+    }
+
+    return null;
+  }
+
   clear() {
     this.data = [];
   }
