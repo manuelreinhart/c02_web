@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatFormFieldModule, MatCardModule, MatButtonModule } from "@angular/material";
+import { MatDialogModule, MatFormFieldModule, MatCardModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -17,7 +17,7 @@ import { CategorySearchComponent } from './category-control/category-search/cate
 
 @NgModule({
   imports: [
-    BrowserModule,        
+    BrowserModule,
     FormsModule,
     MatDialogModule,
     EventsModule,
