@@ -1,10 +1,30 @@
 <div class="dialog">
     <h2 mat-dialog-title >{{event.title}}</h2>
+
+
     <mat-dialog-content>
-    {{event.description}}
+
+        
+    <label>Beschreibung:</label>
+    <div class="text">{{event.description}}</div>
+
+    <label>Zeitraum:</label>
+    <div class="text">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
+
+    <label>Kategorie:</label>
+    <div class="text">{{category}}</div>
+
+    <label>Ort:</label>
+    <div class="text">{{event.locationId}}</div>
+
+    <label>Veranstalter:</label>
+    <div class="text">{{event.organizerId}}</div>
     </mat-dialog-content>
+
+    <img src="../../../assets/img/festival.jpg"><img>
     
     <mat-dialog-actions>
-        <button (click)="closeDialog">Schließen</button>
+        <button class="btn closebutton" (click)="closeDialog()">Schließen</button>
     </mat-dialog-actions>
-    </div>
+
+</div>
