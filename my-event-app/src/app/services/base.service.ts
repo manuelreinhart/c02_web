@@ -31,10 +31,6 @@ export class BaseService<T extends Identifyable> {
     }
   }
 
-  canSaveItem(item: T): boolean {
-    return true;
-  }
-
   addItem(item: T): T {
     item.id = ++this.maxId;
     this.data.push(item);
