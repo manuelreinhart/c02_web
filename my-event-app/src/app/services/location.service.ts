@@ -6,7 +6,7 @@ import { Location } from '../types/location';
 @Injectable({
   providedIn: 'root'
 })
-export class LocationService extends BaseService<Location>{
+export class LocationService extends BaseService<Location> {
 
   constructor() {
     super();

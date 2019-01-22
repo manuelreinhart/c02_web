@@ -1,23 +1,23 @@
 export class Organizer implements Identifyable {
     id: number;
     name: string;
-    address: string;
-    uid: number;
+    street: string;
+    zipCode: number;
+    location: string;
+    countryCode: string;
     email: string;
     telephoneNumber: string;
     homepage: string;
-    username: string;
-    password: string;
-    status: number;
-    role: number;
 
     constructor() {
       this.name = '';
-      this.address = '';
+      this.street = '';
+      // this.zipCode = -1;
+      this.location = '';
+      this.countryCode = '';
       this.email = '';
+      this.telephoneNumber = '';
       this.homepage = '';
-      this.username = '';
-      this.password = '';
     }
-  }
+}
 

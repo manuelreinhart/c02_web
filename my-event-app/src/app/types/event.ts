@@ -17,4 +17,4 @@ export class Event implements Identifyable {
       this.organizerId = -1;
       this.locationId = -1;
     }
-  }
+}
