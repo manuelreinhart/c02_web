@@ -20,13 +20,13 @@ import { CategoryModule } from './category-control/category.module';
     FormsModule,
     MatDialogModule,
     EventsModule,
+    CategoryModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule,
-    CategoryModule
+    AppRoutingModule    
   ],
   exports: [
     MatFormFieldModule
