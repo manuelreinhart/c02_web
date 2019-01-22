@@ -17,7 +17,8 @@ export class CategoryControlListComponent implements OnInit {
 
   dialogRef: MatDialogRef<CategoryControlEditComponent>;
 
-  @ViewChild('categorySearch') categorySearch: CategorySearchComponent;
+  @ViewChild(CategorySearchComponent)
+  categorySearch: CategorySearchComponent;
 
   constructor(public categoryService: CategoryService, public dialog: MatDialog) {
   }

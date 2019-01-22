@@ -23,8 +23,9 @@ export class CategorySearchComponent implements OnInit {
   }
 
   public search() {
-    let filtered = this.categories.filter(c => c.title.toLowerCase().includes(this.name.toLowerCase()) ||
-    c.description.toLowerCase().includes(this.name.toLowerCase()));
+    let nameLowerCase = this.name.toLowerCase();
+    let filtered = this.categories.filter(c => (c.title != null && c.title.toLowerCase().includes(nameLowerCase)) ||
+      (c.description != null && c.description.toLowerCase().includes(nameLowerCase)));
 
     this.onSearchDone.emit(filtered);
   }
