@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule, MatDialogModule, MatNativeDateModule } from '@angular/material';
 
 import { OrganizersViewComponent } from './organizers-view/organizers-view.component';
+import { OrganizersSearchComponent } from './organizers-search/organizers-search.component';
 // import { CategoryService } from '../services/category.service';
 
 @NgModule({
   declarations: [
-    OrganizersViewComponent
+    OrganizersViewComponent,
+    OrganizersSearchComponent
     ],
   exports: [
     OrganizersViewComponent

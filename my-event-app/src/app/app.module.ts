@@ -37,7 +37,11 @@ import { OrganizersModule } from './organizers/organizers.module';
     SidebarComponent,
     HomeComponent
     ],
-  entryComponents: [HomeComponent],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    HomeComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
