@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryModule } from './category-control/category.module';
+import { LocationsComponent } from './locations/locations.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { CategoryModule } from './category-control/category.module';
     AppComponent,
     SidebarComponent,
     HomeComponent,
+    LocationsComponent,
   ],
   entryComponents: [HomeComponent],
   bootstrap: [AppComponent]
