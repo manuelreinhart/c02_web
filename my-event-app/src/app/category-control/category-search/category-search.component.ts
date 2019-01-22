@@ -14,20 +14,17 @@ export class CategorySearchComponent implements OnInit {
   @Input() categories: Array<Category>;
   @Output() onSearchDone = new EventEmitter<Array<Category>>();
 
-  constructor(public categoryService: CategoryService) { 
-
-
+  constructor(public categoryService: CategoryService) {
   }
 
   ngOnInit() {
   }
 
   public search() {
-    let nameLowerCase = this.name.toLowerCase();
-    let filtered = this.categories.filter(c => (c.title != null && c.title.toLowerCase().includes(nameLowerCase)) ||
+    const nameLowerCase = this.name.toLowerCase();
+    const filtered = this.categories.filter(c => (c.title != null && c.title.toLowerCase().includes(nameLowerCase)) ||
       (c.description != null && c.description.toLowerCase().includes(nameLowerCase)));
 
     this.onSearchDone.emit(filtered);
   }
-
 }

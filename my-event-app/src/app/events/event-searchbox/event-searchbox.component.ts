@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Event } from '../../types/event';
-import { Category } from '../../types/category'
+import { Category } from '../../types/category';
 
 @Component({
   selector: 'event-searchbox',
@@ -19,9 +19,7 @@ export class EventSearchboxComponent implements OnInit {
   private category = 0;
   private from: Date;
   private to: Date;
-
-
-
+  
   constructor() { }
 
   ngOnInit() {
@@ -30,21 +28,22 @@ export class EventSearchboxComponent implements OnInit {
   }
 
   search() {
-    let filteredEvents = this.filter();
+    const filteredEvents = this.filter();
     this.onSearchDone.emit(filteredEvents);
   }
 
   filter(): Array<Event> {
     let res = this.events;
     if (this.name) {
-        res = res.filter(e => 
+        res = res.filter(e =>
         e.title.toLowerCase().includes(this.name.toLowerCase()) ||
         e.description.toLowerCase().includes(this.name.toLowerCase())
       );
     }
 
-    if (this.category && this.category > 0)
+    if (this.category && this.category > 0) {
       res = res.filter(e => e.categoryId == this.category);
+    }
 
     return res;
   }

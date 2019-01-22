@@ -9,12 +9,12 @@ import { CategoryService } from '../services/category.service';
 
 @NgModule({
   declarations: [
-      CategoryControlListComponent, 
-      CategoryControlEditComponent, 
+      CategoryControlListComponent,
+      CategoryControlEditComponent,
       CategorySearchComponent],
   exports: [
-      CategoryControlListComponent, 
-      CategoryControlEditComponent, 
+      CategoryControlListComponent,
+      CategoryControlEditComponent,
       CategorySearchComponent],
   imports: [
     CommonModule,
@@ -23,6 +23,6 @@ import { CategoryService } from '../services/category.service';
 
   ],
   providers: [CategoryService],
-  entryComponents: [CategorySearchComponent, CategoryControlEditComponent]  
+  entryComponents: [CategorySearchComponent, CategoryControlEditComponent]
 })
 export class CategoryModule { }

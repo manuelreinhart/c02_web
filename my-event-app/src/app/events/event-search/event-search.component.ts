@@ -3,8 +3,7 @@ import { Event } from '../../types/event';
 import { EventService } from '../../services/event.service';
 import { EventSearchboxComponent } from '../event-searchbox/event-searchbox.component';
 import { CategoryService } from '../../services/category.service';
-import { Category } from '../../types/category'
-
+import { Category } from '../../types/category';
 
 @Component({
   selector: 'event-search',
@@ -26,13 +25,10 @@ export class EventSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filteredEvents = this.events; //todo remove
-   
+    this.filteredEvents = this.events; // todo remove
   }
 
   refreshList(filtered: Array<Event>) {
     this.filteredEvents = filtered;
   }
-
-
 }

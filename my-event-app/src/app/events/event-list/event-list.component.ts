@@ -25,14 +25,15 @@ export class EventListComponent implements OnInit {
   constructor(private eventService: EventService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    
+
   }
 
   showDetail(event) {
-    if (this.editMode || this.searchcards.some(cs => cs.isEdit))
+    if (this.editMode || this.searchcards.some(cs => cs.isEdit)) {
       return;
+    }
 
-    this.detailDialog = this.dialog.open(EventDetailComponent, { 
+    this.detailDialog = this.dialog.open(EventDetailComponent, {
       data: {
         event: event
       }
@@ -45,31 +46,31 @@ export class EventListComponent implements OnInit {
 
   deleteSelected() {
     this.searchcards.forEach(c => {
-      if (c.selected)
+      if (c.selected) {
         this.eventService.deleteItem(c.event);
-    });    
+      }
+    });
     this.editMode = false;
   }
 
   addEvent() {
-    this.newEvent = new Event();   
-    this.newEvent.title = "New Event";
-    this.newEvent.description = "Fill in description here";
+    this.newEvent = new Event();
+    this.newEvent.title = 'New Event';
+    this.newEvent.description = 'Fill in description here';
     this.newEvent.categoryId = 1;
     this.newEvent.locationId = 1;
     this.newEvent.organizerId = 1;
     this.newEvent.startDate = new Date();
     this.newEvent.endDate = new Date();
-    this.editMode = false;    
+    this.editMode = false;
     this.saveNewEvent();
-
   }
   saveNewEvent() {
-    this.newEvent = this.eventService.addItem(this.newEvent);  
+    this.newEvent = this.eventService.addItem(this.newEvent);
     setTimeout(() => {
-      let newCard = this.searchcards.find(c => c.event.id == this.newEvent.id);   
+      const newCard = this.searchcards.find(c => c.event.id == this.newEvent.id);
       newCard.editEvent();
-    }, 100); 
+    }, 100);
   }
 
 }

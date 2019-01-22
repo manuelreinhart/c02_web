@@ -12,11 +12,12 @@ export class Organizer implements Identifyable {
     role: number;
 
     constructor() {
-      this.name = "";
-      this.address = "";
-      this.email = "";
-      this.homepage = "";
-      this.username = "";
-      this.password = "";
+      this.name = '';
+      this.address = '';
+      this.email = '';
+      this.homepage = '';
+      this.username = '';
+      this.password = '';
     }
   }
+

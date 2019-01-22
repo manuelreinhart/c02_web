@@ -10,18 +10,28 @@ import { EventDetailComponent } from './event-detail/event-detail.component'
 import { MatDialogModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
-  declarations: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventCardComponent, EventDetailComponent],
-  exports: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventDetailComponent, MatDatepickerModule, MatNativeDateModule],
+  declarations: [
+    EventSearchComponent,
+    EventListComponent,
+    EventSearchboxComponent,
+    EventCardComponent,
+    EventDetailComponent],
+  exports: [
+    EventSearchComponent,
+    EventListComponent,
+    EventSearchboxComponent,
+    EventDetailComponent,
+    MatDatepickerModule,
+    MatNativeDateModule],
   imports: [
     CommonModule,
     FormsModule,
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule
-
   ],
   providers: [EventService ],
-  entryComponents: [EventDetailComponent]  
+  entryComponents: [EventDetailComponent]
 
 })
 export class EventsModule { }

@@ -5,8 +5,8 @@ export class Category implements Identifyable {
     parentCategoryId: number;
 
     constructor() {
-      this.title = "";
-      this.description = "";
+      this.title = '';
+      this.description = '';
       this.parentCategoryId = -1;
     }
   }

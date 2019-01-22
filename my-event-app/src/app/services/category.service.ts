@@ -1,5 +1,5 @@
 import { Injectable, Inject  } from '@angular/core';
-import { BaseService} from "./base.service";
+import { BaseService} from './base.service';
 import { Category } from '../types/category';
 import { CATEGORIES } from '../mocks/mock-categories';
 
@@ -14,13 +14,12 @@ export class CategoryService extends BaseService<Category> {
     }
 
     canSaveItem(item: Category): boolean {
-        for (var i=0; i<this.data.length; i++) {
+        for (var i = 0; i < this.data.length; i++) {
             if (this.data[i].title == item.title) {
-                if(this.data[i].id == item.id){
+                if (this.data[i].id == item.id) {
                     return true;
-                }
-                else {
-                   return false; 
+                } else {
+                   return false;
                 }
             }
         }

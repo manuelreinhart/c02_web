@@ -1,4 +1,4 @@
-import { Time } from "@angular/common";
+import { Time } from '@angular/common';
 
 export class Event implements Identifyable {
     id: number;
@@ -11,8 +11,8 @@ export class Event implements Identifyable {
     locationId: number;
 
     constructor() {
-      this.title = "";
-      this.description = "";
+      this.title = '';
+      this.description = '';
       this.categoryId = -1;
       this.organizerId = -1;
       this.locationId = -1;

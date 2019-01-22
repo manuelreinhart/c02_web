@@ -10,11 +10,11 @@ export class BaseService<T extends Identifyable> {
     this.maxId = 0;
   }
 
-  initData(items : T[]) {
+  initData(items: T[]) {
     this.data = items;
 
-    for (var i=0; i<this.data.length; i++) {
-      if(this.data[i].id > this.maxId) {
+    for (var i = 0; i < this.data.length; i++) {
+      if (this.data[i].id > this.maxId) {
         this.maxId = this.data[i].id;
       }
     }
@@ -38,7 +38,7 @@ export class BaseService<T extends Identifyable> {
   }
 
   updateItem(item: T) {
-    for (var i=0; i<this.data.length; i++) {
+    for (var i = 0; i < this.data.length; i++) {
       if (this.data[i].id == item.id) {
         this.data[i] = item;
         break;
@@ -47,7 +47,7 @@ export class BaseService<T extends Identifyable> {
   }
 
   getItem(id: number): T {
-    for (var i=0; i<this.data.length; i++) {
+    for (var i = 0; i < this.data.length; i++) {
       if (this.data[i].id == id) {
         return this.data[i];
       }
