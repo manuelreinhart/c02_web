@@ -8,6 +8,12 @@
     <input *ngIf="isEdit" [(ngModel)]="event.description" required minlength="3" name="description" [ngClass]="{invalid: !f?.controls['description']?.valid}" >
 
     <div class="text" *ngIf="!isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
+    
+
+    <!-- <input *ngIf="isEdit" [matDatepicker]="myDatepicker" placeholder="Datum auswählen">
+    <mat-datepicker-toggle *ngIf="isEdit" [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker *ngIf="isEdit" #myDatepicker></mat-datepicker> -->
+
     <div class="text" *ngIf="isEdit">{{event.startDate | date: 'dd.MM.yyyy'}} bis {{event.endDate | date: 'dd.MM.yyyy'}}</div>
 
     <div class="text" *ngIf="!isEdit">{{category}}</div>

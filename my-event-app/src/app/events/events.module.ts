@@ -7,18 +7,20 @@ import { EventSearchboxComponent } from './event-searchbox/event-searchbox.compo
 import { EventService } from '../services/event.service';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventDetailComponent } from './event-detail/event-detail.component'
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventCardComponent, EventDetailComponent],
-  exports: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventDetailComponent],
+  exports: [EventSearchComponent, EventListComponent, EventSearchboxComponent, EventDetailComponent, MatDatepickerModule, MatNativeDateModule],
   imports: [
     CommonModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
-  providers: [EventService],
+  providers: [EventService ],
   entryComponents: [EventDetailComponent]  
 
 })
