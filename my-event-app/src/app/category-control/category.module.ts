@@ -20,7 +20,6 @@ import { CategoryService } from '../services/category.service';
     CommonModule,
     FormsModule,
     MatDialogModule
-
   ],
   providers: [CategoryService],
   entryComponents: [CategorySearchComponent, CategoryControlEditComponent]

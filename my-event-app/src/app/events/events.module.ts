@@ -6,7 +6,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventSearchboxComponent } from './event-searchbox/event-searchbox.component';
 import { EventService } from '../services/event.service';
 import { EventCardComponent } from './event-card/event-card.component';
-import { EventDetailComponent } from './event-detail/event-detail.component'
+import { EventDetailComponent } from './event-detail/event-detail.component';
 import { MatDialogModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
@@ -15,14 +15,16 @@ import { MatDialogModule, MatDatepickerModule, MatNativeDateModule} from '@angul
     EventListComponent,
     EventSearchboxComponent,
     EventCardComponent,
-    EventDetailComponent],
+    EventDetailComponent
+  ],
   exports: [
     EventSearchComponent,
     EventListComponent,
     EventSearchboxComponent,
     EventDetailComponent,
     MatDatepickerModule,
-    MatNativeDateModule],
+    MatNativeDateModule
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -30,8 +32,11 @@ import { MatDialogModule, MatDatepickerModule, MatNativeDateModule} from '@angul
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [EventService ],
-  entryComponents: [EventDetailComponent]
-
+  providers: [
+    EventService
+  ],
+  entryComponents: [
+    EventDetailComponent
+  ]
 })
 export class EventsModule { }

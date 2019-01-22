@@ -5,12 +5,12 @@ import { CategoryControlEditComponent } from '../category-control-edit/category-
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
 import { CategorySearchComponent } from '../category-search/category-search.component';
 
-
 @Component({
   selector: 'app-category-control-list',
   templateUrl: './category-control-list.component.html',
   styleUrls: ['./category-control-list.component.scss']
 })
+
 export class CategoryControlListComponent implements OnInit {
   categories: Category[];
   filteredCategories: Array<Category>;
