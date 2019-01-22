@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CategoryControlListComponent } from './category-control/category-control-list/category-control-list.component';
 import { EventSearchComponent } from './events/event-search/event-search.component';
-import { LocationsComponent } from './locations/locations.component';
+import { LocationListComponent } from './locations/location-list/location-list.component';
 import { OrganizersViewComponent } from './organizers/organizers-view/organizers-view.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryControlListComponent },
   { path: 'organizers', component: OrganizersViewComponent },
   { path: 'events', component: EventSearchComponent },
-  { path: 'locations', component: LocationsComponent },
+  { path: 'locations', component: LocationListComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

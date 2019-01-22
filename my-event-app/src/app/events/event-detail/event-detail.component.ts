@@ -16,7 +16,7 @@ export class EventDetailComponent implements OnInit {
     return  this.categoryService.getItem(this.event.categoryId).title;
   }
 
-  constructor(private dialogRef: MatDialogRef<EventDetailComponent>, private categoryService: CategoryService, @Inject(MAT_DIALOG_DATA) data: any) {
+ constructor(private dialogRef: MatDialogRef<EventDetailComponent>, private categoryService: CategoryService, @Inject(MAT_DIALOG_DATA) data: any) {
     this.event = data.event;
   }
 

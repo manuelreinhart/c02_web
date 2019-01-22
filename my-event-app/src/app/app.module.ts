@@ -3,18 +3,15 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule, MatFormFieldModule, MatCardModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 import { EventsModule } from './events/events.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryModule } from './category-control/category.module';
-import { LocationsComponent } from './locations/locations.component';
-import { OrganizersViewComponent } from './organizers/organizers-view/organizers-view.component';
+import { LocationsModule} from './locations/locations.module';
+import { OrganizersModule } from './organizers/organizers.module';
+
 
 @NgModule({
   imports: [
@@ -23,6 +20,8 @@ import { OrganizersViewComponent } from './organizers/organizers-view/organizers
     MatDialogModule,
     EventsModule,
     CategoryModule,
+    OrganizersModule,
+    LocationsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -36,10 +35,8 @@ import { OrganizersViewComponent } from './organizers/organizers-view/organizers
   declarations: [
     AppComponent,
     SidebarComponent,
-    HomeComponent,
-    LocationsComponent,
-    OrganizersViewComponent,
-  ],
+    HomeComponent
+    ],
   entryComponents: [HomeComponent],
   bootstrap: [AppComponent]
 })
