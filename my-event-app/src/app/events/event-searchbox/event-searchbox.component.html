@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="header">
+      <h4 class="title">Finde dein Event!</h4>
+    </div>
+  
+    <div class="content">
+      <form>        
+        <div class="form-group">
+          <label>Name:</label>
+          <input [(ngModel)]="name" name="event" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Kategorie:</label>
+            <select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" class="form-control" id="category">
+              <option value="0">Alle Kategorien</option>
+              <option *ngFor="let cat of categories" [value]="cat.id">{{cat.title}}</option>
+
+            </select>
+        </div>
+        <!-- <div class="form-group">
+            <label>Von:</label>
+            <input type="date" [(ngModel)]="from" name="from" class="form-control">
+            <label>Bis:</label>
+            <input type="date" [(ngModel)]="to" name="to" class="form-control">
+        </div> -->
+        <div class="form-group">
+          <button (click)="search()"  class="btn btn-default">Suchen</button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+
+
+
+<event-searchbox id="searchbox"  [events]="events" [categories]="categories" (onSearchDone)="refreshList($event)"></event-searchbox>
+
+<event-list [events]="filteredEvents"></event-list>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CategoryService } from '../../services/category.service';
+import { Category } from '../../types/category';
 
 @Component({
   selector: 'app-category-search',
@@ -7,15 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorySearchComponent implements OnInit {
 
-  private name;
+  private name = '';
 
-  constructor() { }
+  @Input() categories: Array<Category>;
+  @Output() onSearchDone = new EventEmitter<Array<Category>>();
+
+  constructor(public categoryService: CategoryService) { 
+
+
+  }
 
   ngOnInit() {
   }
 
   public search() {
+    let nameLowerCase = this.name.toLowerCase();
+    let filtered = this.categories.filter(c => (c.title != null && c.title.toLowerCase().includes(nameLowerCase)) ||
+      (c.description != null && c.description.toLowerCase().includes(nameLowerCase)));
 
+    this.onSearchDone.emit(filtered);
   }
 
 }

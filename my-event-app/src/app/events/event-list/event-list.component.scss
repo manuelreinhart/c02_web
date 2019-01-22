@@ -1,0 +1,65 @@
+.edit-footer {
+    background-color: #0092FF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+    min-height: 0px;
+    margin-left: -15px;
+    transition: min-height 1s;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 0px -2px 30px -1px rgba(0,0,0,0.75);
+    &.open {
+        min-height:60px;
+        opacity: 1;
+    }
+}
+
+
+.add {
+    border-radius: 5px;
+    background-color: white;
+    margin: 5px;
+    padding: 20px;
+    float: left;
+    width: 300px;
+    height: 180px;
+    font-size: 150px;
+    line-height: 140px;
+    font-weight: 300;
+    color: rgba(105, 105, 105, 0.507);
+    text-align: center;
+    vertical-align: top;    
+    animation: wackeln 1s linear infinite;    
+    cursor: pointer;
+}
+
+.info {
+    margin-bottom: 20px;
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 14px;
+    color: dimgray;
+}
+
+.btn {
+    color: black;
+    margin: 10px 10px;
+    background-color: white;
+    &:hover {       
+    }
+    &:active {
+        background-color: #0092FF;
+        color: white;
+    }
+}
+
+@keyframes wackeln {
+    0% {transform: rotate(0deg)};
+    25% {transform: rotate(-2deg)};
+    50% {transform: rotate(0deg)};
+    75% {transform: rotate(2deg)};
+    50% {transform: rotate(0deg)};
+  }

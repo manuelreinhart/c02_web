@@ -1,5 +1,22 @@
 .dialog {
-    min-width: 300px;
+    min-width: 700px;
     min-height: 500px;
-
 }
+
+input, textarea, select  {
+    margin-top: 5px;
+    border: 1px solid gray;
+
+    &:active {
+        border: 1px solid lightgray;
+    }
+    &:hover {
+        border: 1px solid lightgray;
+    }
+    &.invalid {
+        border: 1px solid red;
+        box-shadow: 0 0 10px red;
+    }
+}
+
+.spacer {flex: 1 1 auto;}
