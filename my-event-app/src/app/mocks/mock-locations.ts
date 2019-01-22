@@ -7,5 +7,5 @@ export const LOCATION: Location[] = [
   { id: 4, name: 'Green Park', description: 'sth about Green Park', address: 'Kelsengasse 9', zipcode: '3100', location: 'St. Pölten', countryAbb: 'AUT'},
   { id: 5, name: 'Reifnitz Freigelände', description: 'sth about Reifnitz', address: 'Wörthersee Süduferstraße 115', zipcode: '9081', location: 'Reifnitz', countryAbb: 'AUT' },
   { id: 6, name: 'Schwarzlsee', description: 'sth. about Schwarzlsee', address: 'Thalerhofstraße 85', zipcode: '8141', location: 'Premstätten', countryAbb: 'AUT'},
-  { id: 7, name: 'Nürburgring/Eifle', description: 'sth about Nürburgring', address: 'Otto-Flimm-Straße', zipcode: '53520', location: 'Nürburgring/Eifel', countryAbb: 'BRD'}
+  { id: 7, name: 'Nürburgring/Eifel', description: 'sth about Nürburgring', address: 'Otto-Flimm-Straße', zipcode: '53520', location: 'Nürburgring/Eifel', countryAbb: 'BRD'}
 ];
