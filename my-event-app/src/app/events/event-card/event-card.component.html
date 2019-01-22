@@ -15,8 +15,8 @@
         <option *ngFor="let cat of categories" [ngValue]="cat.id">{{cat.title}}</option>
     </select>   
     
-    <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editEvent()"><i class="ti-pencil"></i></div>
-    <div *ngIf="isEdit" class="editbutton" [ngClass]="{disabled: !f?.valid}" (click)="saveEvent()"><i class="ti-save"></i></div>
+    <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editEvent();$event.stopPropagation()"><i class="ti-pencil"></i></div>
+    <div *ngIf="isEdit" class="editbutton" [ngClass]="{disabled: !f?.valid}" (click)="saveEvent();$event.stopPropagation()"><i class="ti-save"></i></div>
  
     </form>
 </div>

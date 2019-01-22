@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Event } from '../../types/event';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-event-detail',
@@ -11,7 +12,11 @@ export class EventDetailComponent implements OnInit {
 
   private event: Event
 
-  constructor(private dialogRef: MatDialogRef<EventDetailComponent>, @Inject(MAT_DIALOG_DATA) data: any) {
+  get category(): string {
+    return  this.categoryService.getItem(this.event.categoryId).title;
+  }
+
+  constructor(private dialogRef: MatDialogRef<EventDetailComponent>, private categoryService: CategoryService, @Inject(MAT_DIALOG_DATA) data: any) {
     this.event = data.event;
   }
 
@@ -19,7 +24,7 @@ export class EventDetailComponent implements OnInit {
   }
 
   closeDialog() {
-    
+    this.dialogRef.close();  
   }
 
 }

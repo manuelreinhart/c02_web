@@ -29,7 +29,9 @@ export class EventListComponent implements OnInit {
   }
 
   showDetail(event) {
-    console.log(event);
+    if (this.editMode)
+      return;
+
     this.detailDialog = this.dialog.open(EventDetailComponent, { 
       data: {
         event: event
