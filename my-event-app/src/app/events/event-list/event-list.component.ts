@@ -29,7 +29,7 @@ export class EventListComponent implements OnInit {
   }
 
   showDetail(event) {
-    if (this.editMode)
+    if (this.editMode || this.searchcards.some(cs => cs.isEdit))
       return;
 
     this.detailDialog = this.dialog.open(EventDetailComponent, { 
