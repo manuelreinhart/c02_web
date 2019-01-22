@@ -28,7 +28,7 @@ import { OrganizersComponent } from './organizers/organizers.component';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule    
+    AppRoutingModule
   ],
   exports: [
     MatFormFieldModule
