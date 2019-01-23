@@ -1,14 +1,16 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Location} from "../../types/location";
-import {Category} from "../../types/category";
-import {CategoryService} from "../../services/category.service";
+import {Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Location } from "../../types/location";
+import { CategoryService } from "../../services/category.service";
+import { Category } from "../../types/category";
+
 
 @Component({
-  selector: 'app-location-card',
+  selector: 'location-card',
   templateUrl: './location-card.component.html',
   styleUrls: ['./location-card.component.scss']
 })
 export class LocationCardComponent implements OnInit {
+
   @Input() location: Location;
   @Input() editMode: boolean;
   @Output() onLongPress = new EventEmitter();
@@ -20,10 +22,10 @@ export class LocationCardComponent implements OnInit {
 
   get category(): string {
     return  this.categoryService.getItem(this.location.categoryId).title;
-  }
+  };
 
   constructor(private categoryService: CategoryService) {
-  }
+  };
 
   ngOnChanges() {
     if (this.editMode == false) {

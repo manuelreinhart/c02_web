@@ -1,0 +1,56 @@
+.card {
+  border-radius: 5px;
+  background-color: white;
+  margin: 5px;
+  padding: 20px;
+  width: 300px;
+  float: left;
+  height: 225px;
+
+
+  &.edit {
+    animation: wackeln 1s linear infinite;
+  }
+
+  &.selected {
+    background-color: #0092FF;
+  }
+}
+
+.text {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+input {
+  margin-top: 5px;
+  &.invalid {
+    border: 1px solid red;
+    box-shadow: 0 0 10px red;
+  }
+}
+
+.editbutton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@keyframes wackeln {
+  0% {transform: rotate(0deg)}
+  25% {transform: rotate(-2deg)}
+  50% {transform: rotate(0deg)}
+  75% {transform: rotate(2deg)}
+  50% {transform: rotate(0deg)}
+}

@@ -1,9 +1,10 @@
 import {Component, Input, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {Location} from "../../types/location";
-import {MatDialog, MatDialogRef} from "@angular/material";
 import {LocationCardComponent} from "../location-card/location-card.component";
-import {LocationDetailComponent} from "../location-detail/location-detail.component";
 import {LocationService} from "../../services/location.service";
+import {MatDialog, MatDialogRef} from "@angular/material";
+import {LocationDetailComponent} from "../location-detail/location-detail.component";
+
 
 @Component({
   selector: 'location-list',

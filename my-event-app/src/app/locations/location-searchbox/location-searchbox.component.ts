@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit, Input,  Output, EventEmitter} from '@angular/core';
 import {Location} from "../../types/location";
 import {Category} from "../../types/category";
 
@@ -41,7 +41,7 @@ export class LocationSearchboxComponent implements OnInit {
     }
     if (this.zipCode) {
       res = res.filter(e =>
-        e.zipCode.toLowerCase().includes(this.zipCode.toLowerCase())
+      e.zipCode.toLowerCase().includes(this.zipCode.toLowerCase())
       );
     }
     if (this.couAbb) {

@@ -4,18 +4,13 @@
   <div class="info">Zum Bearbeiten gedrückt halten...</div>
 
 
-  <location-card (click)="showDetail(location)" [editMode]="editMode" (onLongPress)="activateEditMode()"
-                 *ngFor="let location of locations" [location]="location" #searchcardLocation></location-card>
+      <location-card (click)="showDetail(location)" [editMode]="editMode" (onLongPress)="activateEditMode()"
+                     *ngFor="let location of locations" [location]="location" #searchcardLocation></location-card>
 
 
-  <div *ngIf="editMode || locations.length == 0" class="add card" (click)="addLocation()">+</div>
-
-  <!--
-  -->
-</div>
+      <div *ngIf="editMode || locations.length == 0" class="add card" (click)="addLocation()">+</div>
 
 <div [ngClass]="{'open': editMode}" class="edit-footer">
   <button class="btn" (click)="deleteSelected()">Ausgewählte Veranstaltungsorte löschen</button>
   <button class="btn" (click)="editMode = false">Schließen</button>
 </div>
-
