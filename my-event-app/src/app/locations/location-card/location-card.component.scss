@@ -17,9 +17,41 @@
   }
 }
 
+.textName {
+  margin-top: 10px;
+  overflow: hidden;
+  font-weight: bolder;
+}
+
+.textDescription {
+  border-color: lightgray;
+  border-top-style: dashed;
+  margin-top: 10px;
+  overflow: hidden;
+  text-align: justify;
+  border-bottom-style: dashed;
+}
+
 .text {
   margin-top: 10px;
   overflow: hidden;
+}
+
+.textZipCode {
+  margin-top: 10px;
+  width: 125px;
+  float: left;
+}
+
+.textCity {
+  margin-top: 10px;
+  width: 125px;
+  float: left;
+}
+
+.textAbbr {
+  margin-top: 10px;
+  float: left;
 }
 
 input {

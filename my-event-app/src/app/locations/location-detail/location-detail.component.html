@@ -1,5 +1,5 @@
 <div class="dialog">
-  <h2 mat-dialog-title >{{location.name}}</h2>
+  <h2 mat-dialog-title >{{location.name |titlecase}}</h2>
 
   <mat-dialog-content>
 
@@ -7,16 +7,16 @@
     <div class="text">{{location.description}}</div>
 
     <label>Adresse</label>
-    <div class="text">{{location.address}}</div>
+    <div class="text">{{location.address | titlecase}}</div>
 
     <label>PLZ:</label>
-    <div class="text">{{location.zipCode}}</div>
+    <div class="text">{{location.zipCode | uppercase}}</div>
 
     <label>Ort:</label>
-    <div class="text">{{location.city}}</div>
+    <div class="text">{{location.city | titlecase}}</div>
 
     <label>Länderkennzeichen:</label>
-    <div class="text">{{location.countryAbb}}</div>
+    <div class="text">{{location.countryAbb | uppercase}}</div>
 
   </mat-dialog-content>
 

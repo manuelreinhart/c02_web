@@ -1,22 +1,22 @@
 <div class="card" [ngClass]="{'selected': selected, 'edit' : editMode}" (mousedown)="mousedown()" (mouseup)="mouseup()" (mouseleave)="mouseup()">
 
   <form #fL="ngForm">
-    <div class="text" *ngIf="!isEdit">{{location.name}}</div>
+    <div class="textName" *ngIf="!isEdit">{{location.name | titlecase}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.name" required minlength="3" name="name" [ngClass]="{invalid: !fL?.controls['name']?.valid}">
 
-    <div class="text" *ngIf="!isEdit">{{location.description}}</div>
+    <div class="textDescription" *ngIf="!isEdit">{{location.description}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.description" minlength="3" name="description" [ngClass]="{invalid: !fL?.controls['description']?.valid}">
 
-    <div class="text" *ngIf="!isEdit">{{location.address}}</div>
+    <div class="text" *ngIf="!isEdit">{{location.address | titlecase}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.address" required minlength="3" name="address" [ngClass]="{invalid: !fL?.controls['address']?.valid}">
 
-    <div class="text" *ngIf="!isEdit">{{location.zipCode}}</div>
+    <div class="textZipCode" *ngIf="!isEdit">{{location.zipCode | uppercase}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.zipCode" required minlength="4" name="zipCode" [ngClass]="{invalid: !fL?.controls['zipCode']?.valid}">
 
-    <div class="text" *ngIf="!isEdit">{{location.city}}</div>
+    <div class="textCity" *ngIf="!isEdit">{{location.city| titlecase}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.city" required minlength="4" name="city" [ngClass]="{invalid: !fL?.controls['city']?.valid}">
 
-    <div class="text" *ngIf="!isEdit">{{location.countryAbb}}</div>
+    <div class="textAbbr" *ngIf="!isEdit">{{location.countryAbb | uppercase}}</div>
     <input *ngIf="isEdit" [(ngModel)]="location.countryAbb" required minlength="3" maxlength="3" name="countryAbb" [ngClass]="{invalid: !fL?.controls['countryAbb']?.valid}">
 
     <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editLocation();$event.stopPropagation()"><i class="ti-pencil"></i></div>
