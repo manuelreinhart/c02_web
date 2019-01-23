@@ -21,6 +21,11 @@ export class EventDetailComponent implements OnInit {
     return this.locationService.getItem(this.event.locationId).name;
   }
 
+  get city(): string {
+    return this.locationService.getItem(this.event.locationId).city;
+  }
+
+
  constructor(private dialogRef: MatDialogRef<EventDetailComponent>, private categoryService: CategoryService,
              private locationService: LocationService, @Inject(MAT_DIALOG_DATA) data: any) {
     this.event = data.event;
