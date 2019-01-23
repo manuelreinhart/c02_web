@@ -1,6 +1,3 @@
-
-
-
-<location-searchbox id="searchbox"  [locations]="locations" [categories]="categories" (onSearchDone)="refreshList($event)"></location-searchbox>
+<location-searchbox id="searchbox"  [locations]="locations" (onSearchDone)="refreshList($event)"></location-searchbox>
 
 <location-list [locations]="filteredLocations"></location-list>

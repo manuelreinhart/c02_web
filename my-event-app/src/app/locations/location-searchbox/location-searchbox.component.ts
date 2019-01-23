@@ -1,6 +1,5 @@
 import {Component, OnInit, Input,  Output, EventEmitter} from '@angular/core';
 import {Location} from "../../types/location";
-import {Category} from "../../types/category";
 
 @Component({
   selector: 'location-searchbox',
@@ -10,15 +9,11 @@ import {Category} from "../../types/category";
 export class LocationSearchboxComponent implements OnInit {
 
   @Input() locations: Array<Location>;
-  @Input() categories: Array<Category>;
-
   @Output() onSearchDone = new EventEmitter<Array<Location>>();
 
-
   private venue: string;
-  private category = 0;
   private zipCode: string;
-  private  city: string;
+  private city: string;
   private couAbb: string;
 
   constructor() { }
@@ -39,9 +34,15 @@ export class LocationSearchboxComponent implements OnInit {
         e.description.toLowerCase().includes(this.venue.toLowerCase())
       );
     }
+
+    if (this.city) {
+      res = res.filter(e =>
+        e.city.toLowerCase().includes(this.city.toLowerCase())
+      );
+    }
     if (this.zipCode) {
       res = res.filter(e =>
-      e.zipCode.toLowerCase().includes(this.zipCode.toLowerCase())
+        e.zipCode.toLowerCase().includes(this.zipCode.toLowerCase())
       );
     }
     if (this.couAbb) {
@@ -49,16 +50,8 @@ export class LocationSearchboxComponent implements OnInit {
         e.countryAbb.toLowerCase().includes(this.couAbb.toLowerCase())
       );
     }
-    if (this.city) {
-      res = res.filter(e =>
-        e.city.toLowerCase().includes(this.city.toLowerCase())
-      );
-    }
-    if (this.category && this.category > 0) {
-      res = res.filter(e => e.categoryId == this.category);
-    }
+
 
     return res;
   }
-
 }

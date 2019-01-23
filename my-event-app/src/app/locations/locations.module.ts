@@ -27,8 +27,8 @@ import { MatDatepickerModule, MatDialogModule, MatNativeDateModule } from "@angu
     MatNativeDateModule
   ],
   imports: [
-    FormsModule,
     CommonModule,
+    FormsModule,
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule

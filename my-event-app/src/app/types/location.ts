@@ -6,7 +6,7 @@ export class Location implements Identifyable {
     zipCode: string;
     city: string;
     countryAbb: string;
-    categoryId: number;
+
 
     constructor() {
       this.name = '';
@@ -15,7 +15,7 @@ export class Location implements Identifyable {
       this.city = '';
       this.zipCode = '';
       this.countryAbb = '';
-      this.categoryId = -1;
+
     }
 }
 

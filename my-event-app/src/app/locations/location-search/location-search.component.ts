@@ -1,8 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { Location} from "../../types/location";
 import { LocationService} from "../../services/location.service";
-import {Category} from "../../types/category";
-import {CategoryService} from "../../services/category.service";
 import {LocationSearchboxComponent} from "../location-searchbox/location-searchbox.component";
 
 
@@ -13,16 +11,14 @@ import {LocationSearchboxComponent} from "../location-searchbox/location-searchb
 })
 export class LocationSearchComponent implements OnInit {
 
-  @ViewChild('searchbox') searchBox: LocationSearchboxComponent;
+  @ViewChild('searchbox') searchbox: LocationSearchboxComponent;
 
   private locations: Array<Location>;
   private filteredLocations: Array<Location>;
 
-  private categories: Array<Category>;
 
-  constructor(private locationService: LocationService, private categoryService: CategoryService) {
+  constructor(private locationService: LocationService) {
     locationService.getItems().subscribe(locations => this.locations = locations);
-    categoryService.getItems().subscribe(categories => this.categories = categories);
   }
 
   ngOnInit() {

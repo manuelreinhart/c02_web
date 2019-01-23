@@ -1,8 +1,5 @@
 import {Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { Location } from "../../types/location";
-import { CategoryService } from "../../services/category.service";
-import { Category } from "../../types/category";
-
 
 @Component({
   selector: 'location-card',
@@ -18,14 +15,8 @@ export class LocationCardComponent implements OnInit {
   timeoutHandler: any;
   public selected: boolean;
   public isEdit: boolean;
-  public categories: Array<Category>
 
-  get category(): string {
-    return  this.categoryService.getItem(this.location.categoryId).title;
-  };
-
-  constructor(private categoryService: CategoryService) {
-  };
+  constructor() {};
 
   ngOnChanges() {
     if (this.editMode == false) {
@@ -36,10 +27,7 @@ export class LocationCardComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.categoryService.getItem(this.location.categoryId).title;
-    this.categoryService.getItems().subscribe(items => this.categories = items);
-  }
+  ngOnInit() {}
 
   public mouseup() {
     if (this.timeoutHandler) {

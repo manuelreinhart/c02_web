@@ -5,10 +5,10 @@
 
 
       <location-card (click)="showDetail(location)" [editMode]="editMode" (onLongPress)="activateEditMode()"
-                     *ngFor="let location of locations" [location]="location" #searchcardLocation></location-card>
+                     *ngFor="let location of locations" [location]="location" #searchcard></location-card>
 
 
-      <div *ngIf="editMode || locations.length == 0" class="add card" (click)="addLocation()">+</div>
+      <div *ngIf="editMode || locations.length == 0" class="add card" (click)="addLocation()"><+></div>
 
 <div [ngClass]="{'open': editMode}" class="edit-footer">
   <button class="btn" (click)="deleteSelected()">Ausgewählte Veranstaltungsorte löschen</button>

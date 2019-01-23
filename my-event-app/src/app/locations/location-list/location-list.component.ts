@@ -15,7 +15,7 @@ export class LocationListComponent implements OnInit {
 
   @Input() locations: Array<Location>;
 
-  @ViewChildren('searchcardLocation') searchcards: QueryList<LocationCardComponent>;
+  @ViewChildren('searchcard') searchcards: QueryList<LocationCardComponent>;
 
   private editMode: boolean;
 
@@ -62,7 +62,6 @@ export class LocationListComponent implements OnInit {
     this.newLocation.zipCode = 'Postleitzahl';
     this.newLocation.city = 'Ort';
     this.newLocation.countryAbb = 'Länderkürzel';
-    this.newLocation.categoryId = 1;
     this.editMode = false;
     this.saveNewLocation();
   }
