@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationEditComponent } from './location-edit.component';
+import { LocationCardComponent } from './location-card.component';
 
-describe('LocationEditComponent', () => {
-  let component: LocationEditComponent;
-  let fixture: ComponentFixture<LocationEditComponent>;
+describe('LocationCardComponent', () => {
+  let component: LocationCardComponent;
+  let fixture: ComponentFixture<LocationCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationEditComponent ]
+      declarations: [ LocationCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LocationEditComponent);
+    fixture = TestBed.createComponent(LocationCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

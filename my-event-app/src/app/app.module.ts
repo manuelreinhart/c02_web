@@ -4,12 +4,12 @@ import { MatDialogModule, MatFormFieldModule, MatCardModule, MatButtonModule } f
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EventsModule } from './events/events.module';
+import { LocationsModule} from './locations/locations.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryModule } from './category-control/category.module';
-import { LocationsModule} from './locations/locations.module';
 import { OrganizersModule } from './organizers/organizers.module';
 
 
@@ -19,9 +19,9 @@ import { OrganizersModule } from './organizers/organizers.module';
     FormsModule,
     MatDialogModule,
     EventsModule,
+    LocationsModule,
     CategoryModule,
     OrganizersModule,
-    LocationsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,

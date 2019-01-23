@@ -1,24 +1,6 @@
-<!--<div class="card">
-  <div class="header">
-    <h2 class="title">Veranstaltungsort suchen:</h2>
-  </div>
-
-  <div class="content">
-    <form #form="ngForm">
-      <div class="form-group">
-        <label>Ort:</label>
-      </div>
-    </form>
 
 
 
+<location-searchbox id="searchbox"  [locations]="locations" [categories]="categories" (onSearchDone)="refreshList($event)"></location-searchbox>
 
-
-
-  </div>
-
-</div>
--->
-<p>
-  location works
-</p>
+<location-list [locations]="filteredLocations"></location-list>

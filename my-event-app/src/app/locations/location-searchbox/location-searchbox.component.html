@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Veranstaltungssuche</h4>
+  </div>
+
+  <div class="content">
+    <form>
+      <div class="form-group">
+        <label>Veranstaltungort:</label>
+        <input [(ngModel)]="venue" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>City:</label>
+        <input [(ngModel)]="city" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Zip Code:</label>
+        <input [(ngModel)]="zipCode" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Länderkürzel:</label>
+        <input [(ngModel)]="couAbb" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Genre:</label>
+        <select [(ngModel)]="category" [ngModelOptions]="{standalone: true}" class="form-control" id="category">
+          <option value="0">Alle Genres</option>
+          <option *ngFor="let cat of categories" [value]="cat.id">{{cat.title}}</option>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button (click)="search()"  class="btn btn-default">Suchen</button>
+      </div>
+    </form>
+  </div>
+</div>

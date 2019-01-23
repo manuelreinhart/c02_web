@@ -1,0 +1,32 @@
+<div class="dialog">
+  <h2 mat-dialog-title >{{location.name}}</h2>
+
+  <mat-dialog-content>
+
+
+    <label>Beschreibung:</label>
+    <div class="text">{{location.description}}</div>
+
+    <label>Adresse</label>
+    <div class="text">{{location.address}}</div>
+
+    <label>PLZ:</label>
+    <div class="text">{{location.zipCode}}</div>
+
+    <label>Ort:</label>
+    <div class="text">{{location.city}}</div>
+
+    <label>Länderkennzeichen:</label>
+    <div class="text">{{location.countryAbb}}</div>
+
+    <label>Kategorie:</label>
+    <div class="text">{{category}}</div>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="btn closebutton" (click)="closeDialog()">Schließen</button>
+  </mat-dialog-actions>
+
+</div>

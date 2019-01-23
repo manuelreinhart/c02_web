@@ -3,17 +3,19 @@ export class Location implements Identifyable {
     name: string;
     description: string;
     address: string;
-    zipcode: string;
-    location: string;
+    zipCode: string;
+    city: string;
     countryAbb: string;
+    categoryId: number;
 
     constructor() {
       this.name = '';
       this.description = '';
       this.address = '';
-      this.location = '';
-      this.zipcode = '';
+      this.city = '';
+      this.zipCode = '';
       this.countryAbb = '';
+      this.categoryId = -1;
     }
 }
 

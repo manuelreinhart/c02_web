@@ -1,0 +1,29 @@
+<div class="card" [ngClass]="{'selected': selected, 'edit' : editMode}" (mousedown)="mousedown()" (mouseup)="mouseup()" (mouseleave)="mouseup()">
+
+  <form #f="ngForm">
+    <div class="text" *ngIf="!isEdit">{{location.name}}</div>
+    <input *ngIf="isEdit" [(ngModel)]="location.name" required minlength="3" [ngClass]="{invalid: !f?.controls['location']?.valid}">
+
+    <div class="text" *ngIf="!isEdit">{{location.description}}</div>
+    <input *ngIf="isEdit" [(ngModel)]="location.description" required minlength="3" name="description" [ngClass]="{invalid: !f?.controls['description']?.valid}" >
+
+    <div class="text" *ngIf="!isEdit">{{location.zipCode}}</div>
+    <input *ngIf="isEdit" [(ngModel)]="location.zipCode" required minlength="4" [ngClass]="{invalid: !f?.controls['zipCode']?.valid}">
+
+    <div class="text" *ngIf="!isEdit">{{location.city}}</div>
+    <input *ngIf="isEdit" [(ngModel)]="location.city" required minlength="4" [ngClass]="{invalid: !f?.controls['city']?.valid}">
+
+    <div class="text" *ngIf="!isEdit">{{location.countryAbb}}</div>
+    <input *ngIf="isEdit" [(ngModel)]="location.countryAbb" required length="3" [ngClass]="{invalid: !f?.controls['countryAbb']?.valid}">
+
+    <div class="text" *ngIf="!isEdit">{{category}}</div>
+    <select *ngIf="isEdit" name="category" [(ngModel)]="location.categoryId" class="form-control">
+      <option *ngFor="let cat of categories" [ngValue]="cat.id">{{cat.title}}</option>
+    </select>
+
+    <div *ngIf="!editMode && !isEdit" class="editbutton" (click)="editLocation();$event.stopPropagation()"><i class="ti-pencil"></i></div>
+    <div *ngIf="isEdit" class="editbutton" [ngClass]="{disabled: !f?.valid}" (click)="saveLocation();$event.stopPropagation()"><i class="ti-save"></i></div>
+  </form>
+</div>
+
+

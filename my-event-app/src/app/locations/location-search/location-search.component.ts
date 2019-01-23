@@ -1,28 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Location} from "../../types/location";
 import { LocationService} from "../../services/location.service";
+import {Category} from "../../types/category";
+import {CategoryService} from "../../services/category.service";
+import {LocationSearchboxComponent} from "../location-searchbox/location-searchbox.component";
 
 
 @Component({
-  selector: 'app-location-search',
+  selector: 'location-search',
   templateUrl: './location-search.component.html',
   styleUrls: ['./location-search.component.scss']
 })
 export class LocationSearchComponent implements OnInit {
 
-  private locations: Array<Location>;
-  private filteredLocation: Array<Location>
+  @ViewChild('searchbox') searchBox: LocationSearchboxComponent;
 
-  constructor(private locationService: LocationService) {
-    locationService.getItems().subscribe( locations => this.locations = locations );
+  private locations: Array<Location>;
+  private filteredLocations: Array<Location>;
+
+  private categories: Array<Category>;
+
+  constructor(private locationService: LocationService, private categoryService: CategoryService) {
+    locationService.getItems().subscribe(locations => this.locations = locations);
+    categoryService.getItems().subscribe(categories => this.categories = categories);
   }
 
   ngOnInit() {
-    this.filteredLocation = this.locations;
+    this.filteredLocations = this.locations; // todo remove
   }
 
   refreshList(filtered: Array<Location>) {
-    this.filteredLocation = filtered;
+    this.filteredLocations = filtered;
   }
-
 }
