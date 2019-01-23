@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseService} from './base.service';
-import { LOCATION} from '../mocks/mock-locations';
 import { Location } from '../types/location';
+import { LOCATION} from '../mocks/mock-locations';
 
 @Injectable({
   providedIn: 'root'
