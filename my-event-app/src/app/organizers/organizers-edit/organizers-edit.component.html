@@ -1,0 +1,78 @@
+<div class="dialog">
+  <h2 mat-dialog-title *ngIf="prevOrganizer != null">Bearbeiten: {{prevOrganizer.name}}</h2>
+  <h2 mat-dialog-title *ngIf="prevOrganizer == null">Organizer hinzufügen</h2>
+
+
+  <mat-dialog-content>
+
+    <form #f="ngForm" >
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control"
+          name="organizerName"
+          [(ngModel)]="organizer.name" [ngClass]="{invalid: !f?.controls['name']?.valid}"
+          required minlength="3"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Strasse:</label>
+        <input class="form-control"
+               name="organizerStreet"
+               [(ngModel)]="organizer.street" [ngClass]="{invalid: !f?.controls['street']?.valid}"
+               required minlength="3"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Plz:</label>
+        <input class="form-control"
+               name="organizerZipCode"
+               [(ngModel)]="organizer.zipCode" [ngClass]="{invalid: !f?.controls['zipCode']?.valid}"
+               required minlength="4"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Ort:</label>
+        <input class="form-control"
+               name="organizerCity"
+               [(ngModel)]="organizer.city" [ngClass]="{invalid: !f?.controls['city']?.valid}"
+               required minlength="4"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>e-Mail:</label>
+        <input class="form-control"
+               name="organizerEmail"
+               type="email"
+               [(ngModel)]="organizer.email"
+               [ngClass]="{invalid: !f?.controls['email']?.valid}"
+               required="required"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Telefonnummer:</label>
+        <input class="form-control"
+               name="organizerTelephoneNumber"
+               [(ngModel)]="organizer.telephoneNumber"
+               [ngClass]="{invalid: !f?.controls['telephoneNumber']?.valid}"
+        />
+      </div>
+
+    </form>
+
+    <div class="alert alert-info" role="alert" *ngIf="hasErrors">
+      Veranstalter kann nicht gespeichert werdern!<br/>
+      Es kann nur ein Veranstalter mit dem gleichen Namen gespeichert werden.
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <span class="spacer"></span>
+    <button class="btn mat-raised-button mat-primary" (click)="save()" [disabled]="!f.valid">Speichern</button>
+    <button class="btn mat-raised-button" (click)="close()">Schließen</button>
+  </mat-dialog-actions>
+</div>

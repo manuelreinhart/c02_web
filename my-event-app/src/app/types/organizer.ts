@@ -3,7 +3,7 @@ export class Organizer implements Identifyable {
     name: string;
     street: string;
     zipCode: number;
-    location: string;
+    city: string;
     countryCode: string;
     email: string;
     telephoneNumber: string;
@@ -13,7 +13,7 @@ export class Organizer implements Identifyable {
       this.name = '';
       this.street = '';
       // this.zipCode = -1;
-      this.location = '';
+      this.city = '';
       this.countryCode = '';
       this.email = '';
       this.telephoneNumber = '';

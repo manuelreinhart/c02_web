@@ -1,5 +1,5 @@
 import {Component, OnInit, Input,  Output, EventEmitter} from '@angular/core';
-import {Location} from "../../types/location";
+import {Location} from '../../types/location';
 
 @Component({
   selector: 'location-searchbox',

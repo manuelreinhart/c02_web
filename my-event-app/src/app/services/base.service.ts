@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 export class BaseService<T extends Identifyable> {

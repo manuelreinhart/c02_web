@@ -1,0 +1,28 @@
+.w8-button { display: table;
+  padding: 7px 15px 8px 15px;
+  border: none; font-family: "open_sans_lightregular";
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.w8-button:hover {
+  opacity: 1;
+}
+.w8-button:active {
+  color: white !important; background-color: #191919 !important;
+}
+
+.w8-button.red { background-color: #d9522c; }
+.w8-button.green { background-color: #009900; }
+.w8-button.pink { background-color: #ae193e; }
+.w8-button.d-blue { background-color: #0099ab; }
+.w8-button.yellow { background-color: #fba919; }
+.w8-button.l-blue { background-color: #2d87ef; }
+.w8-button.violet { background-color: #5b39b6; }
+.w8-button.grey { background-color: #474747; }
+
+/** (UnComment if you don't like border) */
+/*.w8-button, .w8-icon { border: solid 2px white; }*/
+

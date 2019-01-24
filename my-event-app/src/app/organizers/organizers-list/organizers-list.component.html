@@ -1,0 +1,38 @@
+<div>
+  <h3>Gefundene Veranstalter</h3>
+
+  <div>
+    <button class="btn btn-success" (click)="addOrganizer()">Organizer hinzufügen</button>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="hidden">Id</th>
+          <th>Name</th>
+          <th>Strasse</th>
+          <th>Plz</th>
+          <th>Ort</th>
+          <th>Länderkürzel</th>
+          <th>e-Mail</th>
+          <th>Telefonnummer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let organizer of filteredOrganizers">
+          <td class="hidden"></td>
+          <td style="font-weight: bold;">{{organizer.name}}</td>
+          <td style="font-weight: bold;">{{organizer.street}}</td>
+          <td style="font-weight: bold;">{{organizer.zipCode}}</td>
+          <td style="font-weight: bold;">{{organizer.city}}</td>
+          <td style="font-weight: bold;">{{organizer.countryCode}}</td>
+          <td style="font-weight: bold;">{{organizer.email}}</td>
+          <td style="font-weight: bold;">{{organizer.telephoneNumber}}</td>
+          <td>
+            <button class="btn btn-success" (click)="editOrganizer(organizer)"> Bearbeiten</button>
+            <button class="btn btn-danger" (click)="deleteOrganizer(organizer)"> Löschen</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
