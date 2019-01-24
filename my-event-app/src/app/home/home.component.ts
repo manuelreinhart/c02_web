@@ -9,8 +9,6 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  private alarm: boolean;
-
   constructor() { }
 
   ngOnInit() {
