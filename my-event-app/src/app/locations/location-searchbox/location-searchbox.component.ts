@@ -10,6 +10,7 @@ export class LocationSearchboxComponent implements OnInit {
 
   @Input() locations: Array<Location>;
   @Output() onSearchDone = new EventEmitter<Array<Location>>();
+  @Output() onResetDone = new EventEmitter<Array<Location>>();
 
   private venue: string;
   private zipCode: string;
@@ -25,6 +26,20 @@ export class LocationSearchboxComponent implements OnInit {
     const filteredLocations = this.filter();
     this.onSearchDone.emit(filteredLocations);
   }
+
+  reset(){
+    const resetLocations = this.locations;
+    this.clearFilter()
+    this.onResetDone.emit(resetLocations);
+  }
+
+  clearFilter() {
+    this.venue = "";
+    this.city = "";
+    this.zipCode= "";
+    this.couAbb="";
+  }
+
 
   filter(): Array<Location> {
     let res = this.locations;
