@@ -16,7 +16,7 @@
         <td style="max-width: 800px; word-break: normal; text-align: justify;">{{category.description}}</td>
         <td style="font-weight: bold;">{{categoryService?.getItem(category.parentCategoryId)?.title}}</td>
         <td>
-          <button class="btn btn-success" (click)="editCategory(category)"> Ändern</button>
+          <button class="btn btn-success" (click)="editCategory(category)" style="margin-bottom: 5px;"> Ändern</button>
           <button class="btn btn-danger" (click)="deleteCategory(category)"> Löschen</button>
         </td>
       </tr>
