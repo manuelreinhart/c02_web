@@ -7,6 +7,18 @@ Campus02 Angular Project MyEvent
 * Alexander Dzieyk
 * Gerald Süssmeier
 
+## Implementierungen
+
+* Genres: Roman Zotter
+* Veranstalter: Alexander Dzieyk
+* Events: Manuel Reinhart
+* Locations: Gerald Süssmeier
+
+## Zusätzliche Komponenten
+
+* MatDialog
+* Alle Services über Basisklasse
+
 ## Start Project
 * Open cmd Line in Project Folder
 * run npm install
