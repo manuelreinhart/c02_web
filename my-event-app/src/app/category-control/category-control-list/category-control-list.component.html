@@ -1,9 +1,8 @@
 
 <app-category-search [categories]="categories" (onSearchDone)="refreshList($event)" id="categorySearch"></app-category-search>
 <div class="col-md-6">
-    <button class="btn btn-success" (click)="addCategory()"> Genre hinzufügen</button><br>
+    <button class="btn btn-success" (click)="addCategory()">Genre hinzufügen</button><br><br>
     <table class="table table-striped">
-      <thead>
       <tr>
         <th class="hidden">Id</th>
         <th>Name</th>
@@ -11,19 +10,16 @@
         <th>Übergenre</th>
         <th>Aktion</th>
       </tr>
-      </thead>
-      <tbody>
       <tr *ngFor="let category of filteredCategories">
         <td class="hidden"></td>
-        <td style="font-weight: bold;">{{category.title}}</td>
+        <td style="font-weight: bold;">{{category.title | titlecase}}</td>
         <td style="max-width: 800px; word-break: normal; text-align: justify;">{{category.description}}</td>
         <td style="font-weight: bold;">{{categoryService?.getItem(category.parentCategoryId)?.title}}</td>
         <td>
-          <button class="btn btn-success" (click)="editCategory(category)"> Ändern</button>
+          <button class="btn btn-success" (click)="editCategory(category)" style="margin-bottom: 5px;"> Ändern</button>
           <button class="btn btn-danger" (click)="deleteCategory(category)"> Löschen</button>
         </td>
       </tr>
-      </tbody>
     </table>
   </div>
   
