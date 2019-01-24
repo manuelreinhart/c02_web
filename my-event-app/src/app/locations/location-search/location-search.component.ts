@@ -28,4 +28,5 @@ export class LocationSearchComponent implements OnInit {
   refreshList(filtered: Array<Location>) {
     this.filteredLocations = filtered;
   }
+
 }
