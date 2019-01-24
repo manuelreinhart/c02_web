@@ -19,6 +19,13 @@ Campus02 Angular Project MyEvent
 * MatDialog
 * Alle Services über Basisklasse
 
+## Verwendete Konstrukte
+
+* Module
+* Komponenten
+* Services
+* Routen
+
 ## Start Project
 * Open cmd Line in Project Folder
 * run npm install

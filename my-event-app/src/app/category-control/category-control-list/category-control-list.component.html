@@ -12,7 +12,7 @@
       </tr>
       <tr *ngFor="let category of filteredCategories">
         <td class="hidden"></td>
-        <td style="font-weight: bold;">{{category.title}}</td>
+        <td style="font-weight: bold;">{{category.title | titlecase}}</td>
         <td style="max-width: 800px; word-break: normal; text-align: justify;">{{category.description}}</td>
         <td style="font-weight: bold;">{{categoryService?.getItem(category.parentCategoryId)?.title}}</td>
         <td>
