@@ -25,6 +25,9 @@ Campus02 Angular Project MyEvent
 * Komponenten
 * Services
 * Routen
+* Pipes
+* Inputs/Outputs
+* Inject/Injectable
 
 ## Start Project
 * Open cmd Line in Project Folder
