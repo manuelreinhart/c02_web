@@ -28,6 +28,7 @@ Campus02 Angular Project MyEvent
 * Pipes
 * Inputs/Outputs
 * Inject/Injectable
+* Validator
 
 ## Start Project
 * Open cmd Line in Project Folder
