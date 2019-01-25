@@ -22,11 +22,7 @@ export class OrganizersEditComponent {
     this.prevOrganizer = data.organizer;
     this.organizer = {...data.organizer};
   }
-
-  close(): void {
-    this.dialogRef.close(true);
-  }
-
+  
   save(): void {
     if (!this.corganizerService.canSaveItem(this.organizer)) {
       this.hasErrors = true;
@@ -39,6 +35,10 @@ export class OrganizersEditComponent {
       this.corganizerService.updateItem(this.organizer);
     }
 
+    this.dialogRef.close(true);
+  }
+
+  close(): void {
     this.dialogRef.close(true);
   }
 }

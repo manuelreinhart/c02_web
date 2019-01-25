@@ -34,10 +34,10 @@ export class LocationSearchboxComponent implements OnInit {
   }
 
   clearFilter() {
-    this.venue = "";
-    this.city = "";
-    this.zipCode= "";
-    this.couAbb="";
+    this.venue = '';
+    this.city = '';
+    this.zipCode = '';
+    this.couAbb = '';
   }
 
 

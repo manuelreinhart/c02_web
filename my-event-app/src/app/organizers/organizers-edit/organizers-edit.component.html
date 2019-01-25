@@ -43,6 +43,15 @@
       </div>
 
       <div class="form-group">
+        <label>Länderkürzel:</label>
+        <input class="form-control"
+               name="organizerCountryCode"
+               [(ngModel)]="organizer.countryCode" [ngClass]="{invalid: !f?.controls['countryCode']?.valid}"
+               required minlength="2"
+        />
+      </div>
+
+      <div class="form-group">
         <label>e-Mail:</label>
         <input class="form-control"
                name="organizerEmail"

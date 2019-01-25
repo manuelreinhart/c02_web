@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { Location} from "../../types/location";
-import { LocationService} from "../../services/location.service";
-import {LocationSearchboxComponent} from "../location-searchbox/location-searchbox.component";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Location} from '../../types/location';
+import { LocationService} from '../../services/location.service';
+import { LocationSearchboxComponent } from '../location-searchbox/location-searchbox.component';
 
 
 @Component({

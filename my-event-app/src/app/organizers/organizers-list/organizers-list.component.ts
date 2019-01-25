@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { Organizer } from '../../types/organizer';
 import { OrganizerService } from '../../services/organizer.service';
 import { OrganizersEditComponent } from '../organizers-edit/organizers-edit.component';
+import {OrganizersSearchComponent} from '../organizers-search/organizers-search.component';
 
 @Component({
   selector: 'app-organizers-list',
@@ -27,11 +28,11 @@ export class OrganizersListComponent implements OnInit {
     this.organizerService.getItems()
       .subscribe(organizers => {
         this.organizers = organizers;
-        this.reloadList(organizers);
+        this.resetSource(organizers);
       });
   }
 
-  reloadList(organizers: Array<Organizer>): void {
+  resetSource(organizers: Array<Organizer>): void {
     this.filteredOrganizers = organizers;
   }
 
@@ -50,7 +51,7 @@ export class OrganizersListComponent implements OnInit {
   deleteOrganizer(organizer: Organizer): void {
     this.organizerService.deleteItem(organizer);
     // ToDo IMPROVEMENT
-    this.loadDataFromSource(); // can be optimized - performance
+    this.loadDataFromSource();
   }
 
   editOrganizer(organizer: Organizer): void {
@@ -61,7 +62,7 @@ export class OrganizersListComponent implements OnInit {
     });
 
     this.editDialog.afterClosed().subscribe(result => {
-      this.loadDataFromSource(); // can be optimized - performance
+      this.loadDataFromSource();
     });
   }
 }
