@@ -2,6 +2,7 @@ import {Component, OnInit, Inject, ViewChild} from '@angular/core';
 import {OrganizersSearchComponent} from '../organizers-search/organizers-search.component';
 import {OrganizerService} from '../../services/organizer.service';
 import {Organizer} from '../../types/organizer';
+import { OrganizersListComponent } from '../organizers-list/organizers-list.component';
 
 @Component({
   selector: 'app-organizers',
@@ -12,7 +13,8 @@ import {Organizer} from '../../types/organizer';
 export class OrganizersViewComponent implements OnInit {
 
   organizers: Organizer[];
-  @ViewChild('organizersSearch') organizersSearch: OrganizersSearchComponent;
+  @ViewChild(OrganizersSearchComponent) organizersSearch: OrganizersSearchComponent;
+  @ViewChild(OrganizersListComponent) organizersList: OrganizersListComponent;
 
   constructor(public organizerService: OrganizerService) {
     this.loadDataFromSource();
@@ -32,4 +34,7 @@ export class OrganizersViewComponent implements OnInit {
     this.organizersSearch.search();
   }
 
+  public refreshList(organizers: Organizer[]): void {
+    this.organizersList.resetSource(organizers);
+  }
 }

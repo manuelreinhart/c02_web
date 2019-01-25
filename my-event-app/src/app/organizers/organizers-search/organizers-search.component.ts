@@ -27,7 +27,7 @@ export class OrganizersSearchComponent implements OnInit {
     const cityLowerCase = this.city.toLowerCase();
 
     const filtered = this.organizers.filter(
-      item => (item.name != null && item.name.toLowerCase().includes(organizerNameLowerCase)) ||
+      item => (item.name != null && item.name.toLowerCase().includes(organizerNameLowerCase)) &&
         (item.city != null && item.city.toLowerCase().includes(cityLowerCase)));
 
     this.onSearchDone.emit(filtered);
